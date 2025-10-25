@@ -20,11 +20,11 @@
   <body  class="min-h-[100vh] hh w-full font-serif text-white">
   
 
-  <header class="flex h-[80px] w-full justify-between bg-transparent p-5">
+  <header class="flex h-[80px] w-full justify-between sticky top-0  bg-black p-5">
     <a class="no-decoration px-10 text-2xl text-white" href="#">Leet<span class="text-blue-400">NN</span> </a>
 
     <div class="flex justify-center">
-      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">Home</a>
+      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">Departments</a>
       <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">Library</a>
       <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">About</a>
     </div>
@@ -104,7 +104,7 @@
 
 
 
-    <div class="dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3 borde p-3  rounded-md ">
+    <div class="dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3 border p-3  rounded-md ">
 
      
 
@@ -224,7 +224,18 @@
     }, 600); 
   }, 3000); 
 document.getElementById("year").textContent = new Date().getFullYear();
+const search_q=document.getElementById("animatedInput")
+search_q.addEventListener("input",()=>{
+    if (search_q.value !== ""){
+      placeholder.classList.add("close")
+    }
+    else{
+      placeholder.classList.remove("close")
+    }
+  }
+    
 
+)
 
 </script>
 </body>
