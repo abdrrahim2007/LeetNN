@@ -81,7 +81,7 @@ class Chapter(models.Model):
     #  - Works with local filesystem or Django storage backends (reads from file object when no .path).
     #  - Uses BeautifulSoup (if installed) for robust HTML parsing. Falls back to a safe regex when bs4 isn't available.
     #  - Accepts both single and double quoted id attributes, ignores empty ids, and preserves document order.
-    #  - Optionally normalizes/slugifies ids (useful if you want to guarantee valid HTML id tokens).
+  
 
     @property
     def section_ids(self):
@@ -104,12 +104,10 @@ class Chapter(models.Model):
         try:
             # Read file contents regardless of storage backend
             try:
-                # Prefer using path when available (fast, native file access)
                 if hasattr(self.file, 'path') and self.file.path:
                     with open(self.file.path, 'r', encoding='utf-8') as fh:
                         content = fh.read()
                 else:
-                    # Fallback to Django Storage API (works for InMemoryUploadedFile, S3, etc.)
                     self.file.open('r')
                     raw = self.file.read()
                     # raw can be bytes or str
@@ -154,3 +152,101 @@ class Chapter(models.Model):
         except Exception as e:
             logger.exception("Error extracting section ids: %s", e)
             return []
+
+
+
+
+
+
+
+from django.db import models
+from django.utils.text import slugify
+import os
+from PIL import Image,ImageDraw
+import zipfile
+from io import BytesIO
+from pdf2image import convert_from_path
+from django.conf import settings
+
+# ---------- Library Model ----------
+class Library(models.Model):
+    FORMAT_CHOICES = [
+        ("PDF", "PDF"),
+        ("EPUB", "EPUB"),
+        ("MOBI", "MOBI"),
+        ("RMD", "RMD"),
+    ]
+
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255, blank=True, null=True)
+    category = models.CharField(max_length=100, blank=True, null=True)
+    year = models.PositiveIntegerField(blank=True, null=True)
+    format = models.CharField(max_length=10, choices=FORMAT_CHOICES)
+    thumbnail = models.ImageField(upload_to="thumbnails/", blank=True, null=True)
+    file = models.FileField(upload_to="books/")
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def thumbnail_url(self):
+        if self.thumbnail:
+            return self.thumbnail.url
+        # fallback icon path in static
+        return f"/static/icons/{self.format.lower()}.png"
+
+    @property
+    def file_url(self):
+        return self.file.url if self.file else ""
+
+    # ---------- Thumbnail Generation ----------
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Save first to have file.path
+
+        if self.thumbnail:  # already has thumbnail
+            return
+
+        # Define thumbnail path
+        thumb_path = os.path.join(settings.MEDIA_ROOT, "thumbnails", f"{slugify(self.title)}_thumb.jpg")
+        os.makedirs(os.path.dirname(thumb_path), exist_ok=True)
+
+        try:
+            if self.format.upper() == "PDF":
+                # Generate thumbnail from first page of PDF
+                images = convert_from_path(self.file.path, first_page=1, last_page=1)
+                if images:
+                    images[0].save(thumb_path, "JPEG")
+                    self.thumbnail.name = os.path.relpath(thumb_path, settings.MEDIA_ROOT)
+                    super().save(update_fields=["thumbnail"])
+
+            elif self.format.upper() == "EPUB":
+                # Extract cover from EPUB if exists
+                with zipfile.ZipFile(self.file.path, 'r') as epub:
+                    for f in epub.namelist():
+                        if 'cover' in f.lower() and f.lower().endswith(('.jpg', '.jpeg', '.png')):
+                            cover_data = epub.read(f)
+                            image = Image.open(BytesIO(cover_data))
+                            image.thumbnail((300, 400))
+                            image.save(thumb_path)
+                            self.thumbnail.name = os.path.relpath(thumb_path, settings.MEDIA_ROOT)
+                            super().save(update_fields=["thumbnail"])
+                            break
+
+            elif self.format.upper() == "RMD":
+                # Generate a simple text preview thumbnail
+                with open(self.file.path, 'r', encoding='utf-8') as f:
+                    lines = f.readlines()
+                title_line = next((l.strip() for l in lines if l.strip()), "RMD Document")
+                img = Image.new("RGB", (300, 400), color=(245, 245, 245))
+                draw = ImageDraw.Draw(img)
+                from PIL import ImageFont
+                font = ImageFont.load_default()
+                draw.text((20, 180), title_line, fill="black", font=font)
+                img.save(thumb_path)
+                self.thumbnail.name = os.path.relpath(thumb_path, settings.MEDIA_ROOT)
+                super().save(update_fields=["thumbnail"])
+
+            # MOBI or others → fallback icon (do nothing, frontend shows /static/icons/mobi.png)
+        except Exception as e:
+            import logging
+            logging.exception(f"Thumbnail generation failed for {self.title}: {e}")

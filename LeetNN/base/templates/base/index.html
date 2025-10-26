@@ -169,9 +169,9 @@
 <div class="w-full flex pt-6 flex-col items-center justify-center">
   
   <div class="input-box w-full ">
-    <div class="bg-[#222] rounded-sm">
-  <input type="text"  class="p-3" id="animatedInput"><i class="fa-solid cursor-pointer text-white text-xl  fa-magnifying-glass"></i>
-</div>
+    <form method="GET" action="{% url 'library' %}" class="bg-[#222] rounded-sm">
+  <input type="search" name="search_q" class="p-3" id="animatedInput"><button type="submit" class="fa-solid bg-transparent  cursor-pointer text-white text-xl  fa-magnifying-glass"></button>
+</form>
   <span class="placeholder"  id="placeholder">Looking for something?</span>
 </div>
 
