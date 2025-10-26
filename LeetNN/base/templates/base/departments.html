@@ -39,47 +39,23 @@
 
   <div class="flex flex-wrap justify-center gap-6 max-w-6xl w-full">
 
-    <!-- Department Card -->
+    {% for department in departments%}
     <div class="dep w-80 bg-gray-800 rounded-2xl p-6 shadow-md cursor-pointer hover:shadow-lg transition-all">
       <h2 class="text-2xl font-semibold text-center border-b border-gray-600 pb-3">
-        Math
+        {{ department.title }}
       </h2>
 
       <div class="dep-t flex flex-wrap justify-center items-center gap-3 pt-4">
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Python</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Algebra</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Geometry</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Statistics</a>
+
+        {% for course in department.courses.all %}
+        <a class="text-blue-300 hover:text-blue-400 transition" href="{% url 'course_view' dep=department.slug course_slug=course.slug %}">{{course.title}}</a>
+        {% endfor %}
       </div>
     </div>
 
-    <!-- Department Card -->
-    <div class="dep w-80 bg-gray-800 rounded-2xl p-6 shadow-md cursor-pointer hover:shadow-lg transition-all">
-      <h2 class="text-2xl font-semibold text-center border-b border-gray-600 pb-3">
-        Physics
-      </h2>
+    {% endfor %}
 
-      <div class="dep-t flex flex-wrap justify-center items-center gap-3 pt-4">
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Mechanics</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Thermodynamics</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Quantum</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Optics</a>
-      </div>
-    </div>
 
-    <!-- Department Card -->
-    <div class="dep w-80 bg-gray-800 rounded-2xl p-6 shadow-md cursor-pointer hover:shadow-lg transition-all">
-      <h2 class="text-2xl font-semibold text-center border-b border-gray-600 pb-3">
-        Computer Science
-      </h2>
-
-      <div class="dep-t flex flex-wrap justify-center items-center gap-3 pt-4">
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">AI</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Machine Learning</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Data Science</a>
-        <a class="text-blue-300 hover:text-blue-400 transition" href="#">Programming</a>
-      </div>
-    </div>
 
   </div>
 

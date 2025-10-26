@@ -4,7 +4,6 @@ let get_content = null;
 
 let currentMarkdownText = "";
 
-const file_link = "https://raw.githubusercontent.com/abdrrahim2007/abdrrahim2007/refs/heads/main/README.md"; 
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -87,5 +86,11 @@ function render() {
   get_content = html;
 
   preview.querySelectorAll("pre code").forEach(block => hljs.highlightElement(block));
-  MathJax.typesetPromise();
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise()
+        .then(() => {
+            console.log("MathJax rendering complete");
+        })
+        .catch((err) => console.error(err.message));
+}
 }

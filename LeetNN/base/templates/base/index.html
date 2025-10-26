@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,9 +25,9 @@
     <a class="no-decoration px-10 text-2xl text-white" href="#">Leet<span class="text-blue-400">NN</span> </a>
 
     <div class="flex justify-center">
-      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">Departments</a>
+      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="{% url 'departments'%}">Departments</a>
       <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">Library</a>
-      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#">About</a>
+      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#vision">Vision</a>
     </div>
   </header>
 
@@ -38,7 +39,7 @@
     </div>
 
     <div class="rounded-sm">
-      <img class="rounded-sm w-[35rem]" src="animation1.jpg">
+      <img class="rounded-sm w-[35rem]" src="{% static 'base/animation1.jpg' %}">
     </div>
 
   </div>
@@ -119,7 +120,7 @@
 
     </div>
 
-    <a class="px-3 py-2 rounded-md bg-transparent border border-[#60a9a2] text-md md:text-lg hover:bg-[#60a9a2]" href="#">See More</a>
+    <a class="px-3 py-2 rounded-md bg-transparent border border-[#60a9a2] text-md md:text-lg hover:bg-[#60a9a2]" href="{% url 'departments' %}">See More</a>
     
 </div>
 
@@ -133,7 +134,7 @@
 </div>
 
 
-<div class="w-full text-white p-8  min-h-[100vh]">
+<div id="vision" class="w-full text-white p-8  min-h-[100vh]">
 <h1 class="text-2xl  font-medium font-mono">Our Vision</h1>
    
   <div class="flex-col flex md:flex-row items-center justify-center">   
@@ -152,7 +153,7 @@
   </div>
 
    <div>
-      <img class="w-[30rem]" src="animation2.png">
+      <img class="w-[30rem]" src="{% static 'base/animation2.png' %}">
     </div>
 
 </div>
