@@ -201,9 +201,9 @@ class Library(models.Model):
 
     # ---------- Thumbnail Generation ----------
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Save first to have file.path
+        super().save(*args, **kwargs)  
 
-        if self.thumbnail:  # already has thumbnail
+        if self.thumbnail:  
             return
 
         # Define thumbnail path
@@ -246,7 +246,7 @@ class Library(models.Model):
                 self.thumbnail.name = os.path.relpath(thumb_path, settings.MEDIA_ROOT)
                 super().save(update_fields=["thumbnail"])
 
-            # MOBI or others → fallback icon (do nothing, frontend shows /static/icons/mobi.png)
+            
         except Exception as e:
             import logging
             logging.exception(f"Thumbnail generation failed for {self.title}: {e}")

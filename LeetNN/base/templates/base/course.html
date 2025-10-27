@@ -42,7 +42,15 @@
     >
       &#9776; <!-- Hamburger Icon -->
     </button>
-    <div class="app-title">{{course}}</div>
+    <div class="app-title">
+
+<button class="button-back" onclick="history.back()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15 19l-7-7 7-7"/>
+  </svg>
+  {{course}}
+</button>
+</div>
   </header>
 
   <!-- Sidebar (Navigation) -->

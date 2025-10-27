@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import Department, Course, Chapter
 
+
+
+
 def home(request):
     return render(request,"base/index.html",{})
 def department_list(request):
