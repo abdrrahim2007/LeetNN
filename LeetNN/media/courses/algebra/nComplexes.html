@@ -1,0 +1,1390 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module d’algèbre 1 &#8212; Algebra</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nComplexes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapitre 2 : Polynômes à une indéterminée" href="polynomes.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algebra - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algebra - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span id="page-0-0"></span>Module d’algèbre 1</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="polynomes.html">Chapitre 2 : Polynômes à une indéterminée</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/nComplexes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span id="page-0-0"></span>Module d’algèbre 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span id="page-0-0"></span>Module d’algèbre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenu-du-programme">Contenu du programme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapitre-1-nombres-complexes">Chapitre 1 : Nombres Complexes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan"><span id="page-2-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation :</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preuve"><span id="page-5-0"></span>Preuve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remarque">Remarque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remarques">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span id="page-9-0"></span>Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partie-reelle-partie-imaginaire-et-conjugaison">Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Définition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Remarques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><span id="page-11-0"></span>Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span id="page-13-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Remarque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Preuve</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Remarque</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><span id="page-18-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Preuve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-1">Exemple 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-2"><span id="page-23-0"></span>Exemple 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><span id="page-24-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-d-un-nombre-complexe"><span id="page-25-0"></span>Argument d’un nombre complexe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Définition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25"><span id="page-26-0"></span>Argument d’un nombre complexe</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Remarques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id28"><span id="page-27-0"></span>Argument d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30"><span id="page-28-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Remarque</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Exemples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Remarques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id39"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40"><span id="page-36-0"></span>Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#racines-carrees-d-un-nombre-complexe"><span id="page-37-0"></span>Racines carrées d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Racines carrées d’un nombre complexe</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Racines carrées d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple">Exemple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-du-second-degre"><span id="page-40-0"></span>Equation du second degré</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme">théorème</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id44"><span id="page-41-0"></span>Equation du second degré</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Exemples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-du-chapitre-1"><span id="page-42-0"></span>Fin du chapitre 1</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-d-algebre-1">
+<h1><span id="page-0-0"></span>Module d’algèbre 1<a class="headerlink" href="#module-d-algebre-1" title="Link to this heading">#</a></h1>
+<section id="contenu-du-programme">
+<h2>Contenu du programme<a class="headerlink" href="#contenu-du-programme" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Chapitre 1 : Corps des nombres complexes</p></li>
+<li><p>Chapitre 2 : Polynômes à une indéterminée</p></li>
+<li><p>Chapitre 3 : Fractions rationnelles</p></li>
+<li><p>Chapitre 4 : L’espace euclidien R n</p></li>
+<li><p>Chapitre 5 : Espace affine de dimension finie</p></li>
+<li><p>Chapitre 6 : Géométrie dans le plan R</p></li>
+<li><p>Chapitre 7 : Géométrie dans l’espace R</p></li>
+<li><p>Chapitre 8 : Applications affines dans R et dans R</p></li>
+</ul>
+<p><img alt="" src="_page_0_Picture_10.jpeg" /></p>
+<p><img alt="" src="_page_0_Picture_11.jpeg" /></p>
+</section>
+<section id="chapitre-1-nombres-complexes">
+<h2>Chapitre 1 : Nombres Complexes<a class="headerlink" href="#chapitre-1-nombres-complexes" title="Link to this heading">#</a></h2>
+<p>Université Cadi Ayyad Faculté des Sciences Semlalia Filière TC-INFO - S1 Année Universitaire 2025 − 2026</p>
+<p><img alt="" src="_page_1_Picture_2.jpeg" /></p>
+<p>17 septembre 2025</p>
+<p><img alt="" src="_page_1_Picture_4.jpeg" /></p>
+<p><img alt="" src="_page_1_Picture_5.jpeg" /></p>
+</section>
+<section id="plan">
+<h2><span id="page-2-0"></span>Plan<a class="headerlink" href="#plan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>2</sup> <a class="reference internal" href="#page-2-0"><span class="xref myst">Corps des nombres complexes</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_2_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_2_Picture_12.jpeg" /></p>
+<p>Soit  <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>  le corps des nombres réels. On note  <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>  l’ensemble des couples de nombres réels :  <span class="math notranslate nohighlight">\(\mathbb{R}^2 = \{(a,b) : a,b \in \mathbb{R}\}.\)</span></p>
+<section id="definition">
+<h3>Définition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>On appelle corps des nombres complexes, que l’on note  <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> , l’ensemble  <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>  muni des opérations + et  <span class="math notranslate nohighlight">\(\times\)</span> , définies de la manière suivante :</p>
+<div class="math notranslate nohighlight">
+\[\forall (a,b), (a',b') \in \mathbb{R}^2,\]</div>
+<ul class="simple">
+<li><p>Opération d’addition + : (a, b) + (a’, b’) = (a + a’, b + b’),</p></li>
+<li><p>Opération de multiplication  <span class="math notranslate nohighlight">\(\times\)</span>  :  <span class="math notranslate nohighlight">\((a,b) \times (a',b') = (aa'-bb',ab'+a'b)\)</span> .</p></li>
+</ul>
+<p><img alt="" src="_page_3_Picture_7.jpeg" /></p>
+<p><img alt="" src="_page_3_Picture_8.jpeg" /></p>
+</section>
+<section id="notation">
+<h3>Notation :<a class="headerlink" href="#notation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> On veut que le corps des nombres complexes C contienne le corps des nombres réels. Pour cela, pour tout réel a ∈ R, on identifie a avec le nombre complexe (a, 0). On note alors a le nombre complexe (a, 0).</p></li>
+<li><p><sup>2</sup> On note i le nombre complexe (0, 1).</p></li>
+</ul>
+<p>Avec les notations précédentes, on obtient :</p>
+<section id="proposition">
+<h4>Proposition<a class="headerlink" href="#proposition" title="Link to this heading">#</a></h4>
+<p>Soit a, b ∈ R. Alors :</p>
+<ul class="simple">
+<li><p><sup>1</sup> (0, b) = i × b = b × i.</p></li>
+<li><p><sup>2</sup> (a, b) = a + i × b et i × i = −1.</p></li>
+</ul>
+<p><img alt="" src="_page_4_Picture_9.jpeg" /></p>
+<p><img alt="" src="_page_4_Picture_10.jpeg" /></p>
+</section>
+</section>
+<section id="preuve">
+<h3><span id="page-5-0"></span>Preuve<a class="headerlink" href="#preuve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> On a (0, b) = (b, 0) × (0, 1) = (0, 1) × (b, 0). Donc (0, b) = i × b = b × i.</p></li>
+<li><p><sup>2</sup> On a (a, b) = (a, 0) + (0, b) = a + i × b.</p></li>
+<li><p><sup>3</sup> On a (0, 1) × (0, 1) = (1, 0). Donc i × i = −1.</p></li>
+</ul>
+</section>
+<section id="remarque">
+<h3>Remarque<a class="headerlink" href="#remarque" title="Link to this heading">#</a></h3>
+<p>Dans la suite, on convient de noter zz<sup>0</sup> le nombre complexe obtenu par la multiplication des deux nombres complexes z et z 0 .</p>
+</section>
+<section id="id1">
+<h3>Notation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>On note a + ib ou a + bi le nombre complexe z = (a, b). Cette écriture s’appelle la forme algébrique de z. Lorsque a = 0 on dit que z est un imaginaire pur et on écrit z ∈ iR.</p>
+<p><img alt="" src="_page_5_Picture_9.jpeg" /></p>
+<p><img alt="" src="_page_5_Picture_10.jpeg" /></p>
+<p>Notation Avec les conventions précédentes, l’addition et la multiplication deviennent pour les nombres complexes :</p>
+<div class="math notranslate nohighlight">
+\[\forall z = a + ib, z' = a' + ib' \in \mathbb{C},\]</div>
+<ul class="simple">
+<li><p>Opération d’addition + : z + z <sup>0</sup> = (a + a 0 ) + i(b + b 0 ),</p></li>
+<li><p>Opération de multiplication × : zz<sup>0</sup> = (aa<sup>0</sup> − bb<sup>0</sup> ) + i(ab<sup>0</sup> + a <sup>0</sup>b).</p></li>
+</ul>
+</section>
+<section id="remarques">
+<h3>Remarques<a class="headerlink" href="#remarques" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> Un nombre complexe z = a + ib est nul (z = 0) si, et seulement si a = b = 0.</p></li>
+<li><p><sup>2</sup> Pour tout nombre complexe z, on a z + 0 = 0 + z = z et z1 = 1z = z.</p></li>
+<li><p><sup>3</sup> Tout nombre complexe z = a + ib admet un opposé noté −z = −a − ib.</p></li>
+<li><p><sup>4</sup> Tout nombre complexe non nul z = a + ib admet un inverse noté</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{z} = \frac{a}{a^2 + b^2} - i \frac{b}{a^2 + b^2}.\]</div>
+<p><img alt="" src="_page_6_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_6_Picture_12.jpeg" /></p>
+</section>
+<section id="id2">
+<h3>Proposition<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>On a les proporiétés suivantes :</p>
+<ul class="simple">
+<li><p><sup>1</sup> Les deux opérations définies sur C sont associatives et commutatives.</p></li>
+<li><p><sup>2</sup> L’opération × est distributive par rapport à l’opération + :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\forall z, z', z'' \in \mathbb{C}\]</div>
+<p>:  <span class="math notranslate nohighlight">\(z(z' + z'') = zz' + zz''\)</span> .</p>
+<p><img alt="" src="_page_7_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_7_Picture_7.jpeg" /></p>
+<p>Les formules suivantes sont d’une importance majeure dans la suite. Soit z1, z<sup>2</sup> ∈ C et soit n ∈ N.</p>
+<p><sup>1</sup> Formule du binôme :</p>
+<div class="math notranslate nohighlight">
+\[(z_1+z_2)^n=\sum_{k=0}^n C_n^k z_1^k z_2^{n-k} \qquad (C_n^k=\frac{n!}{k!(n-k)!}).\]</div>
+<p><sup>2</sup> Formule de factorisation :</p>
+<div class="math notranslate nohighlight">
+\[z_1^n - z_2^n = (z_1 - z_2) \left( \sum_{k=0}^{n-1} z_1^{n-1-k} z_2^k \right).\]</div>
+<p><sup>3</sup> Si z<sup>1</sup> 6= 1 alors P<sup>n</sup> k=0 z k <sup>1</sup> = 1−z n+1 1 1−z<sup>1</sup> .</p>
+<p><img alt="" src="_page_8_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_8_Picture_7.jpeg" /></p>
+</section>
+</section>
+<section id="id3">
+<h2><span id="page-9-0"></span>Plan<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>3</sup> <a class="reference internal" href="#page-9-0"><span class="xref myst">Partie réelle, partie imaginaire et conjugaison</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_9_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_9_Picture_12.jpeg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="partie-reelle-partie-imaginaire-et-conjugaison">
+<h1>Partie réelle, partie imaginaire et conjugaison<a class="headerlink" href="#partie-reelle-partie-imaginaire-et-conjugaison" title="Link to this heading">#</a></h1>
+<section id="id4">
+<h2>Définition<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Soit z = a + ib un nombre complexe.</p>
+<ul class="simple">
+<li><p><sup>1</sup> On appelle partie réelle de z, que l’on note Re(z), le nombre réel a.</p></li>
+<li><p><sup>2</sup> On appelle partie imaginaire de z, que l’on note Im(z), le nombre réel b.</p></li>
+<li><p><sup>3</sup> On appelle conjugué de z, que l’on note z, le nombre complexe défini par z = a − ib.</p></li>
+</ul>
+<section id="id5">
+<h3>Remarques<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Soit z, z <sup>0</sup> deux nombres complexes. Alors on a :</p>
+<ul class="simple">
+<li><p><sup>1</sup> z = z 0 si, et seulement si, Re(z) = Re(z 0 )et Im(z) = Im(z 0 ).</p></li>
+<li><p><sup>2</sup> z ∈ R si, et seulement si, Im(z) = 0.</p></li>
+<li><p><sup>3</sup> z ∈ iR si, et seulement si, Re(z) = 0.</p></li>
+</ul>
+<p><img alt="" src="_page_10_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_10_Picture_12.jpeg" /></p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1><span id="page-11-0"></span>Partie réelle, partie imaginaire et conjugaison<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<section id="id7">
+<h2>Proposition<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Soit z, z <sup>0</sup> deux nombres complexes. On a les propriétés suivantes :</p>
+<p><sup>1</sup> Re(z) = <sup>z</sup>+<sup>z</sup> 2 et Im(z) = <sup>z</sup>−<sup>z</sup> 2i ,</p>
+<p><sup>2</sup> z = z si, et seulement si, z ∈ R.</p>
+<p><sup>3</sup> z = −z si, et seulement si, z ∈ iR.</p>
+<div class="math notranslate nohighlight">
+\[\overline{z+z'} = \overline{z} + \overline{z'} \text{ et } \overline{zz'} = \overline{z}\overline{z'} .\]</div>
+<p><sup>5</sup> Si z <sup>0</sup> 6= 0 on a</p>
+<div class="math notranslate nohighlight">
+\[\overline{\left(\frac{z}{z'}\right)} = \frac{\overline{z}}{\overline{z'}}.\]</div>
+<p><img alt="" src="_page_11_Picture_9.jpeg" /></p>
+<p><img alt="" src="_page_11_Picture_10.jpeg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>Partie réelle, partie imaginaire et conjugaison<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<section id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>1</sup> Soit z = a + ib un nombre complexe non nul. Donner la forme algébrique de <sup>1</sup> z .</p></li>
+<li><p><sup>2</sup> Donner les formes algébriques des nombres complexes suivants :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[z_1 = \frac{3+4i}{1+3i}, \quad z_2 = \frac{1+i}{1-i}.\]</div>
+</section>
+<section id="solution">
+<h2>Solution :<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p><sup>1</sup> On a zz = a <sup>2</sup> + b 2 . Donc</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{z} = \frac{\overline{z}}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i\frac{b}{a^2 + b^2}.\]</div>
+<p><sup>2</sup> On a :</p>
+<div class="math notranslate nohighlight">
+\[z_1 = \frac{3+4i}{1+3i} = \frac{(3+4i)(1-3i)}{(1+3i)(1-3i)} = \frac{15-5i}{10} = \frac{3}{2} - \frac{1}{2}i.\]</div>
+<div class="math notranslate nohighlight">
+\[z_2 = \frac{1+i}{1-i} = \frac{(1+i)^2}{(1-i)(1+i)} = \frac{2i}{2} = i.\]</div>
+<p><img alt="" src="_page_12_Picture_11.jpeg" /></p>
+</section>
+<section id="id9">
+<h2><span id="page-13-0"></span>Plan<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>4</sup> <a class="reference internal" href="#page-13-0"><span class="xref myst">Module d’un nombre complexe</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_13_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_13_Picture_12.jpeg" /></p>
+<section id="id10">
+<h3>Définition<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Soit z = a + ib un nombre complexe. On appelle module de z, que l’on note |z|, le nombre réel positif, défini par :</p>
+<div class="math notranslate nohighlight">
+\[|z|=\sqrt{a^2+b^2}.\]</div>
+</section>
+<section id="id11">
+<h3>Remarque<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Soit z = a + ib un nombre complexe. Si M est le point du plan R <sup>2</sup> de coordonnées (a, b) dans un repère orthonormé de centre O alors le module de z correspond à la distance entre O et M.</p>
+<p><img alt="" src="_page_14_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_14_Picture_7.jpeg" /></p>
+</section>
+<section id="id12">
+<h3>Proposition<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Soit z = a + ib un nombre complexe. Alors on a :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|z| = 0 \Longleftrightarrow z = 0 \text{ et } |z| = 1 \Longleftrightarrow z\overline{z} = 1.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|z| = |\overline{z}|.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\operatorname{Re}(z)| \le |z| \text{ et } |\operatorname{Im}(z)| \le |z|.\)</span></p></li>
+</ul>
+<section id="id13">
+<h4>Preuve<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>0</p>
+<div class="math notranslate nohighlight">
+\[|z| = 0 \iff a^2 + b^2 = 0 \iff a = b = 0 \iff z = 0.\]</div>
+<p><span class="math notranslate nohighlight">\(|z| = 1 \iff a^2 + b^2 = 1 \iff z\overline{z} = 1.\)</span></p>
+<ul class="simple">
+<li><p>② On a  <span class="math notranslate nohighlight">\(|z| = \sqrt{a^2 + b^2} = |\overline{z}|\)</span> .</p></li>
+<li><p>Ces inégalités découlent du fait que  <span class="math notranslate nohighlight">\(|a| \le \sqrt{a^2 + b^2}\)</span>  et  <span class="math notranslate nohighlight">\(|b| \le \sqrt{a^2 + b^2}\)</span> .</p></li>
+</ul>
+<p><img alt="" src="_page_15_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_15_Picture_12.jpeg" /></p>
+</section>
+</section>
+<section id="id14">
+<h3>Proposition<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Soit z, z <sup>0</sup> des nombres complexes. Alors on a :</p>
+<ul class="simple">
+<li><p><sup>1</sup> |zz<sup>0</sup> | = |z||z 0 |.</p></li>
+<li><p><sup>2</sup> Si z <sup>0</sup> 6= 0 alors | z z 0 | = |z| |z 0 .</p></li>
+</ul>
+<p>Preuve On montre le premier point et le deuxième en découle aisément. Soit z = a +ib et z <sup>0</sup> = a <sup>0</sup> +ib<sup>0</sup> . On a zz<sup>0</sup> = (aa<sup>0</sup> −bb<sup>0</sup> ) +i(ab<sup>0</sup> +a <sup>0</sup>b) donc</p>
+<div class="math notranslate nohighlight">
+\[|zz'| = \sqrt{(aa' - bb')^2 + (ab' + a'b)^2}\]</div>
+<div class="math notranslate nohighlight">
+\[= \sqrt{a^2a'^2 - 2aa'bb' + b^2b'^2 + a^2b'^2 + 2aa'bb' + a'^2b^2}\]</div>
+<div class="math notranslate nohighlight">
+\[= \sqrt{a^2a'^2 + b^2b'^2 + a^2b'^2 + a'^2b^2}\]</div>
+<div class="math notranslate nohighlight">
+\[= \sqrt{(a^2 + b^2)(a'^2 + b'^2)}\]</div>
+<div class="math notranslate nohighlight">
+\[= \sqrt{a^2 + b^2}\sqrt{a'^2 + b'^2}\]</div>
+<div class="math notranslate nohighlight">
+\[= |z||z'|.\]</div>
+<p><img alt="" src="_page_16_Picture_7.jpeg" /></p>
+<p><img alt="" src="_page_16_Picture_8.jpeg" /></p>
+</section>
+<section id="id15">
+<h3>Remarque<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Pour deux nombres complexes z et z 0 , on a l’inégalité |z + z 0 | ≤ |z| + |z 0 |, appelée l’inégalité triangulaire.</p>
+<p><img alt="" src="_page_17_Picture_3.jpeg" /></p>
+<p><img alt="" src="_page_17_Picture_4.jpeg" /></p>
+</section>
+</section>
+<section id="id16">
+<h2><span id="page-18-0"></span>Plan<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>5</sup> <a class="reference internal" href="#page-18-0"><span class="xref myst">Exponentielle imaginaire</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_18_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_18_Picture_12.jpeg" /></p>
+<section id="id17">
+<h3>Définition<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>Soit θ ∈ R. On appelle exponentielle imaginaire de θ, que l’on note e iθ , le nombre complexe défini par :</p>
+<div class="math notranslate nohighlight">
+\[e^{i\theta} = \cos(\theta) + i\sin(\theta).\]</div>
+</section>
+<section id="id18">
+<h3>Proposition<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p>On a les propriétés suivantes :</p>
+<ul class="simple">
+<li><p><sup>1</sup> Soit z = e iθ , avec θ ∈ R. Alors |e iθ | = 1.</p></li>
+<li><p><sup>2</sup> Soit z ∈ C, avec |z| = 1, alors il existe un réel θ tel que z = e iθ .</p></li>
+</ul>
+<p><img alt="" src="_page_19_Picture_8.jpeg" /></p>
+<p><img alt="" src="_page_19_Picture_9.jpeg" /></p>
+</section>
+<section id="id19">
+<h3>Preuve<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> On a |e iθ <sup>2</sup> = cos(θ) <sup>2</sup> + sin(θ) <sup>2</sup> = 1.</p></li>
+<li><p><sup>2</sup> Soit z = a + ib. L’identité |z| = 1 implique que a <sup>2</sup> + b <sup>2</sup> = 1 et par suite −1 ≤ a ≤ 1 et −1 ≤ b ≤ 1. Soit θ ∈ R tel que cos(θ) = a donc b <sup>2</sup> = 1 − a <sup>2</sup> = sin(θ) 2 . Il s’ensuit que (a = cos(θ), b = sin(θ)) ou (a = cos(θ), b = sin(θ)). Ceci montre que z = e <sup>i</sup><sup>θ</sup> ou z = e −iθ .</p></li>
+</ul>
+<p>Le résultat suivant est très important :</p>
+</section>
+<section id="id20">
+<h3>Proposition<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>Soit θ, θ<sup>0</sup> ∈ R. Alors</p>
+<p>1</p>
+<div class="math notranslate nohighlight">
+\[e^{i(\theta+\theta')}=e^{i\theta}e^{i\theta'}.\]</div>
+<p>2</p>
+<div class="math notranslate nohighlight">
+\[e^{i\theta} = e^{i\theta'} \iff \exists k \in \mathbb{Z} : \theta' = \theta + 2k\pi.\]</div>
+</section>
+<section id="exemples">
+<h3>Exemples<a class="headerlink" href="#exemples" title="Link to this heading">#</a></h3>
+<p>Soit θ ∈ R.</p>
+<p><sup>1</sup> e <sup>i</sup><sup>θ</sup> = 1 ⇐⇒ e <sup>i</sup><sup>θ</sup> = e <sup>i</sup><sup>0</sup> ⇐⇒ ∃k ∈ Z : θ = 2kπ.</p>
+<p><sup>2</sup> e <sup>i</sup><sup>θ</sup> = −1 ⇐⇒ e <sup>i</sup><sup>θ</sup> = e <sup>i</sup><sup>π</sup> ⇐⇒ ∃k ∈ Z : θ = π + 2kπ.</p>
+<p><sup>3</sup> e <sup>i</sup><sup>θ</sup> = i ⇐⇒ e <sup>i</sup><sup>θ</sup> = e i <sup>2</sup> ⇐⇒ ∃k ∈ Z : θ = π <sup>2</sup> + 2kπ.</p>
+<p>Les formules suivantes sont importantes en analyse. L’une de leurs applications est la linéarisation des expressions trigonométriques.</p>
+</section>
+<section id="id21">
+<h3>Proposition<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>Soit θ ∈ R et n ∈ Z.</p>
+<p><sup>1</sup> Formules d’Euler :</p>
+<div class="math notranslate nohighlight">
+\[\cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}\]</div>
+<p><span class="math notranslate nohighlight">\(\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}\)</span></p>
+<p><sup>2</sup> Formule de Moivre :</p>
+<div class="math notranslate nohighlight">
+\[(e^{i\theta})^n = e^{in\theta}.\]</div>
+<p>Linéariser une expression sin(x) <sup>k</sup> ou cos(x) k 0 , avec k et k <sup>0</sup> des entiers naturels, revient à les écrire comme combinaisons linéaires d’expressions de la forme sin(ax) ou cos(bx) où a et b sont des entiers.</p>
+</section>
+<section id="exemple-1">
+<h3>Exemple 1<a class="headerlink" href="#exemple-1" title="Link to this heading">#</a></h3>
+<p>Linéarisons l’expression sin(x) 3 . On utilise les formules d’Euler, la formule du binôme puis la formule de Moivre.</p>
+<p>On a
+$<span class="math notranslate nohighlight">\(\sin(x) = \frac{e^{ix} - e^{-ix}}{2i}\)</span>$
+. Donc</p>
+<div class="math notranslate nohighlight">
+\[\sin(x)^{3} = \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^{3}\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{8i^{3}}((e^{ix})^{3} - 3(e^{ix})^{2}e^{-ix} + 3e^{ix}(e^{-ix})^{2} - (e^{-ix})^{3})\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{i}{8}(e^{3ix} - 3e^{ix} + 3e^{-ix} - e^{-3ix})\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{i}{8}(2i\sin(3x) - 6i\sin(x))\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{4}(3\sin(x) - \sin(3x))\]</div>
+<p><img alt="" src="_page_22_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_22_Picture_7.jpeg" /></p>
+</section>
+<section id="exemple-2">
+<h3><span id="page-23-0"></span>Exemple 2<a class="headerlink" href="#exemple-2" title="Link to this heading">#</a></h3>
+<p>Nous allons linéariser l’expression cos(x) 4 . On utilise les formules d’Euler, la formule du binôme puis la formule de Moivre.</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)^4 = \left(\frac{e^{ix} + e^{-ix}}{2}\right)^4\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{16}((e^{ix})^4 + 4(e^{ix})^3 e^{-ix} + 6(e^{ix})^2 (e^{-ix})^2 + 4e^{ix}(e^{-ix})^3 + (e^{-ix})^4)\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{16}(e^{4ix} + 4e^{2ix} + 6 + 4e^{-2ix} + e^{-4ix})\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{16}(2\cos(4x) + 8\cos(2x) + 6)\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{8}(\cos(4x) + 4\cos(2x) + 3)\]</div>
+<p><img alt="" src="_page_23_Picture_4.jpeg" /></p>
+<p><img alt="" src="_page_23_Picture_5.jpeg" /></p>
+</section>
+</section>
+<section id="id22">
+<h2><span id="page-24-0"></span>Plan<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>6</sup> <a class="reference internal" href="#page-24-0"><span class="xref myst">Argument d’un nombre complexe</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_24_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_24_Picture_12.jpeg" /></p>
+<section id="argument-d-un-nombre-complexe">
+<h3><span id="page-25-0"></span>Argument d’un nombre complexe<a class="headerlink" href="#argument-d-un-nombre-complexe" title="Link to this heading">#</a></h3>
+<p>La notion d’arguments de nombres complexes joue un rôle important en géométrie plane et en physique. Nous allons voir dans cette section quelques propriétés essentielles de nombres complexes.</p>
+</section>
+<section id="id23">
+<h3>Proposition<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>Soit z un nombre complexe non nul. Alors il existe  <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}\)</span>  :  <span class="math notranslate nohighlight">\(z = |z|e^{i\theta}\)</span> .</p>
+<p><strong>Preuve</strong> Puisque
+$<span class="math notranslate nohighlight">\(\left|\frac{z}{|z|}\right|=1\)</span><span class="math notranslate nohighlight">\(
+ il existe  \)</span>\theta\in\mathbb{R}<span class="math notranslate nohighlight">\(  :  \)</span>\frac{z}{|z|}=e^{i\theta}<span class="math notranslate nohighlight">\( . Il s'ensuit que  \)</span>z=|z|e^{i\theta}$ .</p>
+<section id="id24">
+<h4>Définition<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
+<p>Soit z un nombre complexe non nul.</p>
+<ul class="simple">
+<li><p>L’écriture  <span class="math notranslate nohighlight">\(z = |z|e^{i\theta}\)</span>  s’appelle la forme polaire de z.</p></li>
+<li><p>2 Le réel  <span class="math notranslate nohighlight">\(\theta\)</span> , noté arg(z), s’appelle un argument de z.</p></li>
+</ul>
+<p><img alt="" src="_page_25_Picture_9.jpeg" /></p>
+<p><img alt="" src="_page_25_Picture_10.jpeg" /></p>
+</section>
+</section>
+<section id="id25">
+<h3><span id="page-26-0"></span>Argument d’un nombre complexe<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<section id="id26">
+<h4>Remarques<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>3</strong> Soit z un nombre complexe non nul. Si  <span class="math notranslate nohighlight">\(\theta\)</span>  est un argument de z, alors pour tout entier  <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span> ,  <span class="math notranslate nohighlight">\(\theta + 2k\pi\)</span>  est aussi un argument de z. On écrit  <span class="math notranslate nohighlight">\(\arg(z) = \theta\)</span>  [ <span class="math notranslate nohighlight">\(2\pi\)</span> ].</p></li>
+<li><p>② Sur l’intervalle  <span class="math notranslate nohighlight">\(]-\pi,\pi]\)</span> , il existe un unique réel  <span class="math notranslate nohighlight">\(\theta\)</span>  vérifiant  <span class="math notranslate nohighlight">\(\theta=\arg(z)\)</span> . On l’appelle argument principal de z.</p></li>
+</ul>
+</section>
+<section id="id27">
+<h4><strong>Exemples</strong><a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>L’argument principal de 1 est 0.</p></li>
+<li><p><strong>2</strong> L’argument principal de -1 est  <span class="math notranslate nohighlight">\(\pi\)</span> .</p></li>
+<li><p><strong>②</strong> L’argument principal de i est  <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> .</p></li>
+</ul>
+<p>On détermine effectivement l’argument principal  <span class="math notranslate nohighlight">\(\theta\)</span>  d’un complexe non nul z=a+ib en remarquant que  <span class="math notranslate nohighlight">\(\theta\)</span>  est l’unique réel appartenant à l’intervalle  <span class="math notranslate nohighlight">\(]-\pi,\pi]\)</span>  défini par les deux relations :</p>
+<div class="math notranslate nohighlight">
+\[\cos(\theta) = \frac{a}{\sqrt{a^2 + b^2}}\]</div>
+<p><span class="math notranslate nohighlight">\(\sin(\theta) = \frac{b}{\sqrt{a^2 + b^2}}\)</span></p>
+<p><img alt="" src="_page_26_Picture_10.jpeg" /></p>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id28">
+<h1><span id="page-27-0"></span>Argument d’un nombre complexe<a class="headerlink" href="#id28" title="Link to this heading">#</a></h1>
+<section id="id29">
+<h2>Proposition<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
+<p>Soit z et z <sup>0</sup> deux nombres complexes non nuls. Alors :</p>
+<p>1</p>
+<div class="math notranslate nohighlight">
+\[arg(zz') = arg(z) + arg(z')\]</div>
+<p>[2 <span class="math notranslate nohighlight">\(\pi\)</span> ].</p>
+<p>2</p>
+<div class="math notranslate nohighlight">
+\[\arg(\frac{z}{z'}) = \arg(z) - \arg(z')\]</div>
+<p>[2 <span class="math notranslate nohighlight">\(\pi\)</span> ].</p>
+<p>3</p>
+<div class="math notranslate nohighlight">
+\[arg(\frac{1}{z}) = arg(\overline{z}) = -arg(z)\]</div>
+<p>[2 <span class="math notranslate nohighlight">\(\pi\)</span> ].</p>
+<p><sup>4</sup> Pour tout k ∈ Z on a :</p>
+<div class="math notranslate nohighlight">
+\[arg(z^k) = k arg(z)\]</div>
+<p>[2 <span class="math notranslate nohighlight">\(\pi\)</span> ].</p>
+<p><img alt="" src="_page_27_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_27_Picture_12.jpeg" /></p>
+</section>
+<section id="id30">
+<h2><span id="page-28-0"></span>Plan<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>7</sup> Racines n<a class="reference internal" href="#page-28-0"><span class="xref myst">-èmes d’un nombre complexe</span></a></p></li>
+<li><ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_28_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_28_Picture_12.jpeg" /></p>
+<p>Dans cette section, n désigne un entier naturel non nul.</p>
+<section id="id31">
+<h3>Définition<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
+<p>Soit z un nombre complexe non nul. On appelle racine n-ème de z tout nombre complexe w vérifiant w <sup>n</sup> = z.</p>
+</section>
+<section id="id32">
+<h3>Remarque<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
+<p>Lorsque n = 2 (respectivement n = 3) on parle de racine carrée (respectivement racine cubique).</p>
+<section id="id33">
+<h4>Exemples<a class="headerlink" href="#id33" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><sup>1</sup> 1 est une racine n-ème de 1 pour tout n.</p></li>
+<li><p><sup>2</sup> i est une racine carrée de −1.</p></li>
+<li><p>3 √5 3 est une racine cinquième de 3.</p></li>
+</ul>
+<p><img alt="" src="_page_29_Picture_11.jpeg" /></p>
+<p>Notre but est de déterminer toutes les racines n-èmes d’un nombre complexe donné. On commence par déterminer les racines n-èmes du complexes z = 1 et ensuite on montre comment déterminer celles d’un nombre complexe quelconque. Une racine n-ème de 1 s’appelle une racine n-ème de l’unité.</p>
+</section>
+</section>
+<section id="id34">
+<h3>Remarques<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> Si n est pair alors 1 et −1 sont des racines n-èmes de l’unité.</p></li>
+<li><p><sup>2</sup> Si w est une racine n-ème de l’unité alors |w| = 1. En effet w <sup>n</sup> = 1 implique |w| <sup>n</sup> = 1. Donc</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[0 = |w|^n - 1 = (|w| - 1)(\sum_{k=0}^{n-1} |w|^{n-1-k}).\]</div>
+<p>Comme ( P<sup>n</sup>−<sup>1</sup> k=0 |w| n−1−k ) 6= 0 il vient |w| − 1 = 0 et par suite |w| = 1.</p>
+<section id="id35">
+<h4>Proposition<a class="headerlink" href="#id35" title="Link to this heading">#</a></h4>
+<p>Il existe exactement n racines n-èmes de l’unité. Elles sont de la forme</p>
+<div class="math notranslate nohighlight">
+\[w_k = e^{\frac{2ik\pi}{n}}, \quad k = 0, 1, \dots, n-1.\]</div>
+<p><strong>Preuve</strong> Il est clair que pour tout entier  <span class="math notranslate nohighlight">\(0 \le k \le n-1\)</span> , le complexe  <span class="math notranslate nohighlight">\(e^{\frac{2ik\pi}{n}}\)</span>  est une racine n-ème de l’unité.</p>
+<p>Réciproquement, soit w une racine n-ème de l’unité. Puisque |w|=1 il existe  <span class="math notranslate nohighlight">\(\theta \in [0,2\pi[\)</span>  tel que  <span class="math notranslate nohighlight">\(w=e^{i\theta}.\)</span>  En utilisant la formule de Moivre il vient  <span class="math notranslate nohighlight">\((e^{i\theta})^n=e^{in\theta}=1.\)</span></p>
+<p>Alors il existe  <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>  tel que  <span class="math notranslate nohighlight">\(n\theta = 2k\pi\)</span> , soit  <span class="math notranslate nohighlight">\(\theta = \frac{2k\pi}{n}\)</span> .</p>
+<p>Comme  <span class="math notranslate nohighlight">\(\theta \in [0, 2\pi[\)</span>  on a nécessairement  <span class="math notranslate nohighlight">\(0 \le k \le n-1\)</span> .</p>
+<p><img alt="" src="_page_31_Picture_8.jpeg" /></p>
+<p><img alt="" src="_page_31_Picture_9.jpeg" /></p>
+</section>
+</section>
+<section id="id36">
+<h3>Remarques<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<p><sup>1</sup> Soit w une racine n-ème de l’unité. Si w 6= 1 alors</p>
+<div class="math notranslate nohighlight">
+\[1+w+\cdots+w^{n-1}=0.\]</div>
+<p><sup>2</sup> Soit w<sup>k</sup> = e <sup>n</sup> une racine n-ème de l’unité. Alors</p>
+<div class="math notranslate nohighlight">
+\[\overline{w_k} = \frac{1}{w_k} = e^{-\frac{2ik\pi}{n}} = e^{2i\pi - \frac{2ik\pi}{n}} = e^{\frac{2i(n-k)\pi}{n}} = w_{n-k}.\]</div>
+<p><sup>3</sup> Les racines n-èmes de l’unité sont situées sur le cercle trogonométrique.</p>
+<p><img alt="" src="_page_32_Picture_7.jpeg" /></p>
+<p><img alt="" src="_page_32_Picture_8.jpeg" /></p>
+</section>
+<section id="id37">
+<h3>Exemples<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
+<p>Déterminons les racines n-èmes de l’unité dans les cas suivants :</p>
+<p>n = 3 : On a trois racines troisièmes de l’unité</p>
+<div class="math notranslate nohighlight">
+\[w_0 = 1,\]</div>
+<p><span class="math notranslate nohighlight">\(w_1 = e^{\frac{2i\pi}{3}},\)</span>   <span class="math notranslate nohighlight">\(w_2 = e^{\frac{4i\pi}{3}} = \overline{w_1}.\)</span></p>
+<p>n = 4 : On a quatre racines quatrièmes de l’unité</p>
+<div class="math notranslate nohighlight">
+\[w_0 = 1\]</div>
+<p>,  <span class="math notranslate nohighlight">\(w_1 = e^{\frac{2i\pi}{4}} = i\)</span> ,  <span class="math notranslate nohighlight">\(w_2 = e^{\frac{4i\pi}{4}} = -1\)</span> ,  <span class="math notranslate nohighlight">\(w_3 = e^{\frac{6i\pi}{4}} = -i\)</span> .</p>
+<p>n = 5 : On a cinq racines cinquièmes de l’unité</p>
+<div class="math notranslate nohighlight">
+\[w_0 = 1\]</div>
+<p>,  <span class="math notranslate nohighlight">\(w_1 = e^{\frac{2i\pi}{5}}\)</span> ,  <span class="math notranslate nohighlight">\(w_2 = e^{\frac{4i\pi}{5}}\)</span> ,  <span class="math notranslate nohighlight">\(w_3 = e^{\frac{6i\pi}{5}} = \overline{w_2}\)</span> ,  <span class="math notranslate nohighlight">\(w_4 = e^{\frac{8i\pi}{5}} = \overline{w_1}\)</span> .</p>
+<p><img alt="" src="_page_33_Picture_9.jpeg" /></p>
+<p><img alt="" src="_page_33_Picture_10.jpeg" /></p>
+<p>On peut maintenant donner la forme des racines n-èmes d’un nombre complexe quelconque.</p>
+</section>
+<section id="id38">
+<h3>Proposition<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<p>Soit z un nombre complexe non nul de forme polaire  <span class="math notranslate nohighlight">\(z=\rho e^{i\theta}\)</span> . Alors les racines n-èmes de z sont de la forme</p>
+<div class="math notranslate nohighlight">
+\[Z_k = \sqrt[n]{\rho} e^{i\left(\frac{\theta}{n} + \frac{2k\pi}{n}\right)}, \quad k = 0, 1, \dots, n-1.\]</div>
+<p><strong>Preuve</strong> Il suffit de remarquer que si Z est une racine n-ème de z alors</p>
+<div class="math notranslate nohighlight">
+\[\frac{Z}{\sqrt[n]{\rho}e^{\frac{i\theta}{n}}}\]</div>
+<p>est une racine n-ème de l’unité. Ceci montre qu’il existe  <span class="math notranslate nohighlight">\(0 \le k \le n-1\)</span>  tel que</p>
+<div class="math notranslate nohighlight">
+\[\frac{Z}{\sqrt[n]{\rho}\,\mathrm{e}^{\frac{\mathrm{i}\theta}{n}}}=\mathrm{e}^{\frac{2\mathrm{i}k\pi}{n}}.\]</div>
+<p>D’où Z est de la forme  <span class="math notranslate nohighlight">\(\sqrt[n]{\rho} e^{i\left(\frac{\theta}{n} + \frac{2k\pi}{n}\right)}\)</span> .</p>
+<p><img alt="" src="_page_34_Picture_10.jpeg" /></p>
+<p><img alt="" src="_page_34_Picture_11.jpeg" /></p>
+<section id="id39">
+<h4><strong>Exemples</strong><a class="headerlink" href="#id39" title="Link to this heading">#</a></h4>
+<p>Déterminons les racines <em>n</em>-èmes du nombre complexe <em>z</em> dans les cas suivants:</p>
+<ul class="simple">
+<li><p>-1 sont :</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(z_0 = e^{i\frac{\pi}{4}}, \quad z_1 = e^{i\frac{\pi}{4}}e^{2i\frac{\pi}{4}} = e^{3i\frac{\pi}{4}}, \quad z_2 = e^{i\frac{\pi}{4}}e^{4i\frac{\pi}{4}} = e^{5i\frac{\pi}{4}}, \quad z_3 = e^{i\frac{\pi}{4}}e^{2i\frac{\pi}{4}}\)</span>  <span class="math notranslate nohighlight">\(e^{i\frac{\pi}{4}}e^{6i\frac{\pi}{4}}=e^{7i\frac{\pi}{4}}\)</span></p></li>
+</ul>
+</li>
+<li><p>2 z = 1 + i et n = 4: On a  <span class="math notranslate nohighlight">\(z = \sqrt{2}e^{i\frac{\pi}{4}}\)</span> . Donc les racines quatrièmes de 1+i sont :  <span class="math notranslate nohighlight">\(z_0 = 2^{\frac{1}{8}} e^{i\frac{\pi}{16}}, \quad z_1 = 2^{\frac{1}{8}} e^{9i\frac{\pi}{16}}, \quad z_2 = 2^{\frac{1}{8}} e^{17i\frac{\pi}{16}}, \quad z_3 = 2^{\frac{1}{8}} e^{25i\frac{\pi}{16}}.\)</span></p></li>
+</ul>
+<p><img alt="" src="_page_35_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_35_Picture_7.jpeg" /></p>
+</section>
+</section>
+</section>
+<section id="id40">
+<h2><span id="page-36-0"></span>Plan<a class="headerlink" href="#id40" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>8</sup> <a class="reference internal" href="#page-36-0"><span class="xref myst">Equations du second degré</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#page-37-0"><span class="xref myst">Racines carrées d’un nombre complexe</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_page_36_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_36_Picture_12.jpeg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="racines-carrees-d-un-nombre-complexe">
+<h1><span id="page-37-0"></span>Racines carrées d’un nombre complexe<a class="headerlink" href="#racines-carrees-d-un-nombre-complexe" title="Link to this heading">#</a></h1>
+<p>D’après la section précédente tout nombre complexe non nul z admet deux racines carrées opposées l’une à l’autre. Si z est donné sous sa forme polaire z = ρe iθ alors ces deux racines carrées sont données par</p>
+<div class="math notranslate nohighlight">
+\[z_1 = \sqrt{\rho} e^{\frac{i\theta}{2}}, \qquad z_2 = -z_1.\]</div>
+<section id="id41">
+<h2>Remarques<a class="headerlink" href="#id41" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>1</sup> Si <sup>x</sup> <sup>∈</sup> <sup>R</sup><sup>+</sup> alors les racines carrées de <sup>x</sup> sont <sup>√</sup> x et − √ x.</p></li>
+<li><p><sup>2</sup> Si x ∈ R<sup>−</sup> alors les racines carrées de x sont i p |x| et −i p |x|.</p></li>
+</ul>
+<p><img alt="" src="_page_37_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_37_Picture_7.jpeg" /></p>
+</section>
+<section id="id42">
+<h2>Racines carrées d’un nombre complexe<a class="headerlink" href="#id42" title="Link to this heading">#</a></h2>
+<p>Dans le cas où le nombre complexe z = a + ib est donné sous sa forme algébrique on suit la méthode suivante. Soit Z = x + iy une racine carrée de z. Puisque Z <sup>2</sup> = z et |Z| <sup>2</sup> = |z| on a</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^2 + y^2 &amp;= \sqrt{a^2 + b^2} \\ x^2 - y^2 &amp;= a \\ 2xy &amp;= b \end{cases}\end{split}\]</div>
+<p>On obtient alors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^2 = \frac{\sqrt{a^2 + b^2} + a}{2} \\ y^2 = \frac{\sqrt{a^2 + b^2} - a}{2} \\ 2xy = b \end{cases}\end{split}\]</div>
+<p>On utilise les deux premières équations pour déterminer les valeurs possibles de x et y et on utilise la troisième relation pour choisir les valeurs convenables.</p>
+<p><img alt="" src="_page_38_Picture_6.jpeg" /></p>
+<p><img alt="" src="_page_38_Picture_7.jpeg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id43">
+<h1>Racines carrées d’un nombre complexe<a class="headerlink" href="#id43" title="Link to this heading">#</a></h1>
+<section id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h2>
+<p>Déterminons les racines carrées de z = 8 − 6i. Posons Z = x + iy une racine carrée de z. Alors on a</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^2 + y^2 &amp;= 10 \\ x^2 - y^2 &amp;= 8 \\ 2xy &amp;= -6 \end{cases}\end{split}\]</div>
+<p>Donc</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^2 = 9 \\ y^2 = 1 \\ xy = -3 \end{cases}\end{split}\]</div>
+<p>Il vient Z<sup>1</sup> = 3 − i et Z<sup>2</sup> = −3 + i.</p>
+<p><img alt="" src="_page_39_Picture_7.jpeg" /></p>
+<p><img alt="" src="_page_39_Picture_8.jpeg" /></p>
+</section>
+<section id="equation-du-second-degre">
+<h2><span id="page-40-0"></span>Equation du second degré<a class="headerlink" href="#equation-du-second-degre" title="Link to this heading">#</a></h2>
+<p>Une équation de la forme  <span class="math notranslate nohighlight">\(az^2 + bz + c = 0\)</span>  d’inconnue z et de coefficients a,b,c dans  <span class="math notranslate nohighlight">\(\mathbb C\)</span>  s’appelle une équation du second degré à coefficients dans  <span class="math notranslate nohighlight">\(\mathbb C\)</span> .</p>
+<section id="theoreme">
+<h3>théorème<a class="headerlink" href="#theoreme" title="Link to this heading">#</a></h3>
+<p>Soit a, b, c des nombres complexes avec  <span class="math notranslate nohighlight">\(a \neq 0\)</span>  et soit l’équation du second degré</p>
+<div class="math notranslate nohighlight">
+\[(E) \qquad az^2 + bz + c = 0.\]</div>
+<p>Notons  <span class="math notranslate nohighlight">\(\Delta = b^2 - 4ac\)</span> . Alors</p>
+<p>• Si  <span class="math notranslate nohighlight">\(\Delta = 0\)</span>  l’équation (E) admet une solution double</p>
+<div class="math notranslate nohighlight">
+\[z_0=\frac{-b}{2a}.\]</div>
+<p>② Si  <span class="math notranslate nohighlight">\(\Delta \neq 0\)</span>  l’équation (E) admet deux solutions distinctes :</p>
+<div class="math notranslate nohighlight">
+\[Z_1 = \frac{-b - \delta}{2a} \qquad \qquad Z_2 = \frac{-b + \delta}{2a}\]</div>
+<p>où  <span class="math notranslate nohighlight">\(\delta\)</span>  est une racine carrée de  <span class="math notranslate nohighlight">\(\Delta\)</span> .</p>
+<p><img alt="" src="_page_40_Picture_11.jpeg" /></p>
+<p><img alt="" src="_page_40_Picture_12.jpeg" /></p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id44">
+<h1><span id="page-41-0"></span>Equation du second degré<a class="headerlink" href="#id44" title="Link to this heading">#</a></h1>
+<section id="id45">
+<h2>Exemples<a class="headerlink" href="#id45" title="Link to this heading">#</a></h2>
+<p><sup>1</sup> Résoudre dans C l’équation du second degré :</p>
+<p>(E) :
+$<span class="math notranslate nohighlight">\(iz^2 - \sqrt{3}z + 1 = 0\)</span>$</p>
+<p>On a ∆ = 3 − 4i et δ = 2 − i est une racine carrée de ∆. Alors les solutions de (E) sont :</p>
+<div class="math notranslate nohighlight">
+\[Z_1 = \frac{\sqrt{3} - 2 + i}{2i}\]</div>
+<p><span class="math notranslate nohighlight">\(Z_2 = \frac{\sqrt{3} + 2 - i}{2i}\)</span></p>
+<p><sup>2</sup> Résoudre dans C l’équation du second degré :</p>
+<p>(E) :
+$<span class="math notranslate nohighlight">\(z^2 - (1+i)z + i = 0\)</span>$
+.</p>
+<p>On a ∆ = −2i = 2e −iπ <sup>2</sup> et δ = √ 2e −iπ <sup>4</sup> est une racine carrée de ∆. Alors les solutions de (E) sont :</p>
+<div class="math notranslate nohighlight">
+\[Z_1 = \frac{1+i-\sqrt{2}e^{\frac{-i\pi}{4}}}{2}\]</div>
+<p><span class="math notranslate nohighlight">\(Z_2 = \frac{1+i+\sqrt{2}e^{\frac{-i\pi}{4}}}{2}\)</span></p>
+<p><img alt="" src="_page_41_Picture_10.jpeg" /></p>
+</section>
+<section id="fin-du-chapitre-1">
+<h2><span id="page-42-0"></span>Fin du chapitre 1<a class="headerlink" href="#fin-du-chapitre-1" title="Link to this heading">#</a></h2>
+<p><img alt="" src="_page_42_Picture_1.jpeg" /></p>
+<p><img alt="" src="_page_42_Picture_2.jpeg" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="polynomes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapitre 2 : Polynômes à une indéterminée</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span id="page-0-0"></span>Module d’algèbre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenu-du-programme">Contenu du programme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapitre-1-nombres-complexes">Chapitre 1 : Nombres Complexes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan"><span id="page-2-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation :</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preuve"><span id="page-5-0"></span>Preuve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remarque">Remarque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remarques">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span id="page-9-0"></span>Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partie-reelle-partie-imaginaire-et-conjugaison">Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Définition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Remarques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><span id="page-11-0"></span>Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Partie réelle, partie imaginaire et conjugaison</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span id="page-13-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Remarque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Preuve</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Remarque</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><span id="page-18-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Preuve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-1">Exemple 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-2"><span id="page-23-0"></span>Exemple 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><span id="page-24-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-d-un-nombre-complexe"><span id="page-25-0"></span>Argument d’un nombre complexe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Définition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25"><span id="page-26-0"></span>Argument d’un nombre complexe</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Remarques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id28"><span id="page-27-0"></span>Argument d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30"><span id="page-28-0"></span>Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Remarque</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Exemples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Remarques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id39"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40"><span id="page-36-0"></span>Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#racines-carrees-d-un-nombre-complexe"><span id="page-37-0"></span>Racines carrées d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Racines carrées d’un nombre complexe</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Racines carrées d’un nombre complexe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple">Exemple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-du-second-degre"><span id="page-40-0"></span>Equation du second degré</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme">théorème</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id44"><span id="page-41-0"></span>Equation du second degré</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Exemples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-du-chapitre-1"><span id="page-42-0"></span>Fin du chapitre 1</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By AI and Abdo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

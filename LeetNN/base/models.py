@@ -18,8 +18,8 @@ def generate_unique_slug(model_instance, title, slug_field_name='slug'):
     return unique_slug
 
 
-# ---------- Department ----------
-class Department(models.Model):
+# ---------- Category ----------
+class Category(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True, max_length=200)
 
@@ -34,18 +34,37 @@ class Department(models.Model):
 
 # ---------- Course ----------
 class Course(models.Model):
-    department = models.ForeignKey(
-        Department,
-        on_delete=models.CASCADE,
+    category = models.ForeignKey(
+        Category,
+        null=True,
+        on_delete=models.SET_NULL,
         related_name='courses'
     )
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True, max_length=200)
+    folder_path = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    zip_file = models.FileField(upload_to='uploads/', blank=True, null=True, help_text="Upload course as a .zip file")
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = generate_unique_slug(self, self.title)
         super().save(*args, **kwargs)
+
+        if self.zip_file:
+            import zipfile
+            from django.conf import settings
+
+            extract_to = os.path.join(settings.MEDIA_ROOT, 'courses', self.slug)
+            os.makedirs(extract_to, exist_ok=True)
+
+            with zipfile.ZipFile(self.zip_file.path, 'r') as zip_ref:
+                zip_ref.extractall(extract_to)
+
+            # Update folder_path
+            self.folder_path = f"books/{self.slug}"
+            super().save(update_fields=['folder_path'])
 
     def __str__(self):
         return self.title
@@ -55,7 +74,8 @@ class Course(models.Model):
 class Chapter(models.Model):
     course = models.ForeignKey(
         Course,
-        on_delete=models.CASCADE,
+        null=True,
+        on_delete=models.SET_NULL,
         related_name='chapters'
     )
     title = models.CharField(max_length=200)
@@ -175,6 +195,8 @@ class Library(models.Model):
         ("EPUB", "EPUB"),
         ("MOBI", "MOBI"),
         ("RMD", "RMD"),
+        ("MD", "MD"),
+        ("IPYNB", "IPYNB"),
     ]
 
     title = models.CharField(max_length=255)

@@ -13,14 +13,14 @@ body{
   -webkit-text-fill-color: transparent;
 
 }
-.dep{
+.cat{
   height: 11rem;
   background-color: #111721;
   transition:  all .4s ease;
 }
 
 
-.fa-solid,.dep-t{
+.fa-solid,.cat-t{
   color: #858b97;
 }
 
@@ -32,7 +32,7 @@ a{
 
 .input-box {
     position: relative;
-    
+    max-width: 50rem;
   }
 
 

@@ -1,26 +1,24 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from .models import Department, Course, Chapter
+from .models import Category, Course, Chapter
 
 
 
 
 def home(request):
     return render(request,"base/index.html",{})
-def department_list(request):
-    departments = Department.objects.all()
-    return render(request, 'base/departments.html', {'departments': departments})
+def category_list(request):
+    categories = Category.objects.all()
+    return render(request, 'base/categories.html', {'categories': categories})
 
-def course_view(request,dep,course_slug):
+
+def course_view_new(request,cat,course_slug):
     course = get_object_or_404(Course, slug=course_slug)
-    chapters = course.chapters.all().order_by('id')  
-    if chapters.exists():
-        first_chapter = chapters.first()
-        return redirect('chapter_view', dep=dep, course_slug=course_slug, chapter_slug=first_chapter.slug)
 
-    return render(request,'base/course.html',{'course':course,'chapters':chapters})
+    return redirect(f"/media/courses/{course_slug}/index.html")
 
 
-def chapter_view(request,dep,course_slug,chapter_slug):
+
+def chapter_view(request,cat,course_slug,chapter_slug):
     course = get_object_or_404(Course, slug=course_slug)
     chapter_c = get_object_or_404(Chapter, slug=chapter_slug)
     chapters = course.chapters.all()

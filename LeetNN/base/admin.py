@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Department, Course, Chapter,Library
+from .models import Category, Course, Chapter,Library
 
-@admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 

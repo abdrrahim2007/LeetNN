@@ -7,25 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-     --><title>LeetNN</title>
-      <style type="text/css">
-        
-      </style>
+   
+     <title>LeetNN</title>
+ 
+
+
+<style>
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #24292e, #444c56);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.github-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #444c56, #24292e);
+}
+
+.github-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+</style>
 
 </head>
   
 
 
-  <body  class="min-h-[100vh] hh w-full font-serif text-white">
+  <body  class="min-h-[100%] hh w-full font-serif text-white">
   
 
   <header class="flex h-[80px] w-full justify-between sticky top-0  bg-black p-5">
     <a class="no-decoration px-10 text-2xl text-white" href="#">Leet<span class="text-blue-400">NN</span> </a>
 
     <div class="flex justify-center">
-      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="{% url 'departments'%}">Departments</a>
+      <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="{% url 'categories'%}">Categories</a>
       <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="{% url 'library' %}">Library</a>
       <a class="no-decoration text-md px-[1rem] text-white transition duration-300 hover:translate-y-1 hover:text-blue-400" href="#vision">Vision</a>
     </div>
@@ -44,12 +71,12 @@
 
   </div>
 
-<div class="w-full text-white p-8  min-h-[100vh]">
-<h1 class="text-2xl font-medium font-mono">Our Departments</h1>
+<div class="w-full text-white p-8  h-[100%]">
+<h1 class="text-2xl font-medium font-mono">Our categories</h1>
 
 <div class="md:p-7  ml-[2rem] justify-start sm:justify-center  mt-6 flex flex-wrap items-center gap-6">
 
-    <div class=" dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md ">
+    <div class=" cat transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md ">
 
      
 
@@ -70,7 +97,7 @@
 
 
 
-    <div class="dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md ">
+    <div class="cat transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md ">
 
      
 
@@ -87,7 +114,7 @@
 
 
 
-    <div class="dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md   bg-[#131823]">
+    <div class="cat transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3  p-3  rounded-md   bg-[#131823]">
 
      
 
@@ -105,7 +132,7 @@
 
 
 
-    <div class="dep transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3 border p-3  rounded-md ">
+    <div class="cat transition hover:scale-105 py-[2rem] sm:md:w-[18rem]  flex items-center flex-col  gap-3 border p-3  rounded-md ">
 
      
 
@@ -120,21 +147,17 @@
 
     </div>
 
-    <a class="px-3 py-2 rounded-md bg-transparent border border-[#60a9a2] text-md md:text-lg hover:bg-[#60a9a2]" href="{% url 'departments' %}">See More</a>
+    <a class="px-3 py-2 rounded-md bg-transparent border border-[#60a9a2] text-md md:text-lg hover:bg-[#60a9a2]" href="{% url 'categories' %}">See More</a>
     
 </div>
 
 </div>
 
-<!-- end departments -->
-
-<div class="vision ">
-  
-
-</div>
+<!-- end categories -->
 
 
-<div id="vision" class="w-full text-white p-8  min-h-[100vh]">
+
+<div id="vision" class="w-full text-white p-8  min-h-[100%]">
 <h1 class="text-2xl  font-medium font-mono">Our Vision</h1>
    
   <div class="flex-col flex md:flex-row items-center justify-center">   
@@ -142,10 +165,11 @@
   <div class="md:w-[35rem] pt-[4rem] flex items-center  w-[90%] ">
     <p class="text-stone-400 text-xl leading-7 text-justify">
 
-      LeetNN is a colaborition between people that want to merge AI, interactivity, and visualization to transform complex ideas in math, physics, computer science, biology, and beyond into clear, intuitive learning experiences.
+      LeetNN is a collaborative platform where people merge AI, interactivity, and visualization to transform complex concepts in math, physics, computer science, biology, and more into clear, intuitive learning experiences.
 
-      Our mission is simple:<br>
-      <span class="font-semibold text-2xl">To make education as intelligent, creative, and limitless as the human mind.
+       Our mission is simple:<br>
+      <span class="font-semibold text-2xl">To make education as intelligent, creative, and boundless as the human mind.
+
       </span>
       <hr >
 
@@ -168,7 +192,7 @@
 
 <div class="w-full flex pt-6 flex-col items-center justify-center">
   
-  <div class="input-box w-full ">
+  <div class="input-box w-full  ">
     <form method="GET" action="{% url 'library' %}" class="bg-[#222] rounded-sm">
   <input type="search" name="search_q" class="p-3" id="animatedInput"><button type="submit" class="fa-solid bg-transparent  cursor-pointer text-white text-xl  fa-magnifying-glass"></button>
 </form>
@@ -185,10 +209,22 @@
    
 
     <p class="text-md font-semibold p-3">Made by Abdo at FSSM— &copy; <span id="year"></span></p>
+
+<a href="https://github.com/abdrrahim2007/" target="_blank" class="github-btn">
+  <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.76-1.605-2.665-.304-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.48 11.48 0 013.003-.403c1.018.005 2.045.137 3.003.403 2.29-1.552 3.297-1.23 3.297-1.23.654 1.653.242 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.624-5.48 5.921.43.37.823 1.096.823 2.21 0 1.596-.015 2.88-.015 3.27 0 .32.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </svg>
+  Visit Our GitHub
+</a>
   
 </div>
 
 
+
+
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <script>
   const phrases = [
@@ -226,5 +262,20 @@ search_q.addEventListener("input",()=>{
 )
 
 </script>
+
+
+<script>
+  // Select all buttons with class 'cat'
+  const catButtons = document.querySelectorAll('.cat');
+
+  catButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      
+        window.location.href = {% url 'categories'%}; 
+      
+    });
+  });
+</script>
+
 </body>
 </html>

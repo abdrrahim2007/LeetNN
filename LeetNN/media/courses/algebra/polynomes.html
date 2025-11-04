@@ -1,0 +1,1584 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapitre 2 : Polynômes à une indéterminée &#8212; Algebra</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polynomes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module d’algèbre 1" href="nComplexes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algebra - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algebra - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nComplexes.html"><span id="page-0-0"></span>Module d’algèbre 1</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapitre 2 : Polynômes à une indéterminée</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/polynomes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapitre 2 : Polynômes à une indéterminée</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapitre 2 : Polynômes à une indéterminée</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plan">Plan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomes-a-une-indeterminee">Polynômes à une indéterminée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notations">Notations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Polynômes à une indéterminée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarques">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarque">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Plan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Définition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme">Théorème</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-1">Exemple 1</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exemples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Plan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algortihme-d-euclide">Algortihme d’Euclide.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Exemple 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-2">Exemple 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-3">Exemple 3</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomes-premiers-entre-eux">Polynômes premiers entre eux</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Définition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Exemple 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Polynômes premiers entre eux</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Exemple 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racines-d-un-polynome">Racines d’un polynôme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><strong>Définition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Racines d’un polynôme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preuve">Preuve :</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Racines d’un polynôme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition-formule-de-taylor">Proposition (Formule de Taylor )</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Exercice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Exemples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynome-conjugue">Polynôme conjugué</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaire">Corollaire</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-c-x">Factorisation dans C[X]</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Theorème</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Theorème</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-mathbb-c-x">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-mathbb-r-x">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">Theorème</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-r-x">Factorisation dans R[X]</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Exemples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">Exercice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapitre-2-polynomes-a-une-indeterminee">
+<h1>Chapitre 2 : Polynômes à une indéterminée<a class="headerlink" href="#chapitre-2-polynomes-a-une-indeterminee" title="Link to this heading">#</a></h1>
+<p>Université Cadi Ayyad Faculté des Sciences Semlalia Filière TC-INFO - S1 Année Universitaire 2025 − 2026</p>
+<p><img alt="" src="_page_0_Picture_2.jpeg" /></p>
+<p>14 octobre 2025</p>
+<p><img alt="" src="_page_0_Picture_4.jpeg" /></p>
+</section>
+<section id="plan">
+<h1>Plan<a class="headerlink" href="#plan" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_1_Picture_11.jpeg" /></p>
+</section>
+<section id="polynomes-a-une-indeterminee">
+<h1>Polynômes à une indéterminée<a class="headerlink" href="#polynomes-a-une-indeterminee" title="Link to this heading">#</a></h1>
+<p>Dans tout ce chapitre on note K l’ensemble des nombres réels ou l’ensembe des nombres complexes.</p>
+<section id="definition">
+<h2>Définition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>Un polynôme à coefficients dans  <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>  est une suite  <span class="math notranslate nohighlight">\((a_n)\)</span>  d’éléments de  <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> nulle à partir d’un certain rang.</p>
+<div class="math notranslate nohighlight">
+\[(a_n) = (a_0, a_1, \ldots, a_k, 0, 0, \ldots)\]</div>
+<p>Le scalaire  <span class="math notranslate nohighlight">\(a_i\)</span>  est dit le coefficient d’indice i du polynôme  <span class="math notranslate nohighlight">\((a_n)\)</span> .</p>
+</section>
+<section id="notations">
+<h2>Notations<a class="headerlink" href="#notations" title="Link to this heading">#</a></h2>
+<p>On note</p>
+<ul class="simple">
+<li><p>1 le polynôme (1, 0, 0, … ).</p></li>
+<li><p>X le polynôme (0, 1, 0, 0, …).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bigcirc\)</span>   <span class="math notranslate nohighlight">\(X^k\)</span>  le polynôme  <span class="math notranslate nohighlight">\((0,\ldots,0,1,0,0,\ldots)\)</span>  où 1 est placé dans la position d’indice k.</p></li>
+</ul>
+<p>Avec ces notations, si  <span class="math notranslate nohighlight">\(P=(a_0,a_1,\ldots,a_n,\ldots)\)</span>  est un polynôme on a</p>
+<div class="math notranslate nohighlight">
+\[P = a_0(1,0,0,\ldots) + a_1(0,1,0,0,\ldots) + \cdots + a_n(0,\ldots,0,1,0,0,\ldots)\]</div>
+<p>=  <span class="math notranslate nohighlight">\(a_0.1 + a_1.X + \cdots + a_n.X^n\)</span></p>
+</section>
+</section>
+<section id="id1">
+<h1>Polynômes à une indéterminée<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Dans la suite on note  <span class="math notranslate nohighlight">\(\mathbb{K}[X]\)</span>  l’ensemble des polynômes à coefficients dans  <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> .</p>
+<section id="remarques">
+<h2>Remarques<a class="headerlink" href="#remarques" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>1</strong> Un polynôme  <span class="math notranslate nohighlight">\(P = a_0 + a_1 X + \cdots + a_n X^n \in \mathbb{K}[X]\)</span>  est nul si, et seulement si, tous les coefficients  <span class="math notranslate nohighlight">\(a_i\)</span>  sont nuls.</p></li>
+<li><p>Plus généralement, deux polynômes  <span class="math notranslate nohighlight">\(P=a_0+a_1X+\cdots+a_nX^n\in\mathbb{K}[X]\)</span>  et  <span class="math notranslate nohighlight">\(Q=b_0+b_1X+\cdots+b_mX^m\in\mathbb{K}[X]\)</span>  sont égaux si, et seulement si, pour tout  <span class="math notranslate nohighlight">\(i\geq 0, a_i=b_i.\)</span></p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>Définition<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Soit  <span class="math notranslate nohighlight">\(P = a_0 + a_1 X + \cdots + a_n X^n \in \mathbb{K}[X]\)</span> , avec  <span class="math notranslate nohighlight">\(a_n \neq 0\)</span> .</p>
+<p>On appelle degré de P, que l’on note  <span class="math notranslate nohighlight">\(\deg(P)\)</span> , l’entier naturel n. Le coefficient  <span class="math notranslate nohighlight">\(a_n\)</span>  sera dit le coefficient dominant de P. Lorsque  <span class="math notranslate nohighlight">\(a_n=1\)</span>  on dit que P est unitaire.</p>
+<p>Par convention, le degré du polynôme nul est  <span class="math notranslate nohighlight">\(-\infty\)</span> .</p>
+<p><img alt="" src="_page_3_Picture_9.jpeg" /></p>
+</section>
+<section id="remarque">
+<h2>Remarque<a class="headerlink" href="#remarque" title="Link to this heading">#</a></h2>
+<p>Soit P = a<sup>0</sup> + a1X + · · · + anX <sup>n</sup> ∈ K[X], n = deg(P). Alors pour tout m ≥ n le polynôme P est aussi égal à</p>
+<div class="math notranslate nohighlight">
+\[a_0 + a_1 X + \cdots + a_n X^n + 0 X^{n+1} + \cdots + 0 X^m\]</div>
+<p>On définit dans K[X] les opérations d’addition, de multiplication par un scalaire et de multiplication comme suit : Soit P = a<sup>0</sup> + a1X + · · · + anX n et Q = b<sup>0</sup> + b1X + · · · + bmX <sup>m</sup> deux polynômes de K[X].</p>
+<p><sup>1</sup> Somme :</p>
+<p>Si m ≥ n on pose</p>
+<div class="math notranslate nohighlight">
+\[P+Q=(a_0+b_0)+(a_1+b_1)X+\cdots+(a_n+b_n)X^n+b_{n+1}X^{n+1}+\cdots+b_mX^m.\]</div>
+<p>Si n ≥ m on pose</p>
+<div class="math notranslate nohighlight">
+\[P+Q=(a_0+b_0)+(a_1+b_1)X+\cdots+(a_m+b_m)X^m+b_{m+1}X^{m+1}+\cdots+b_nX^n.\]</div>
+<p><sup>2</sup> Multiplication par un scalaire : Pour tout λ ∈ K on définit λP = λa<sup>0</sup> + λa1X + · · · + λanX n .</p>
+<p><img alt="" src="_page_4_Picture_10.jpeg" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Produit : P × Q = c<sup>0</sup> + c1X + · · · + ckX <sup>k</sup> + · · · + cn+mX <sup>n</sup>+<sup>m</sup>. avec</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[c_k = a_0 b_k + a_1 b_{k-1} + \dots + a_k b_0 = \sum_{\ell=0}^k a_\ell b_{k-\ell}, \ \ 0 \le k \le n+m.\]</div>
+</section>
+<section id="proposition">
+<h2>Proposition<a class="headerlink" href="#proposition" title="Link to this heading">#</a></h2>
+<p>Soient P et Q deux polynômes de K[X]. On a :</p>
+<ul class="simple">
+<li><p><sup>1</sup> deg(P + Q) ≤ max{deg(P), deg(Q)},</p></li>
+<li><p><sup>2</sup> deg(PQ) = deg(P) + deg(Q).</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Remarques<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><sup>1</sup> Soit P = 1 + X − X 2 et Q = 1 + X + X 2 . On a P + Q = 2 + 2X et donc deg(P + Q) = 1. Ceci montre que le degré de la somme de deux polynômes peut être strictement inférieur au maximum de leurs degrés.</p></li>
+<li><p><sup>2</sup> Si deg(P) 6= deg(Q) alors deg(P + Q) = max{deg(P), deg(Q)}.</p></li>
+</ul>
+</section>
+<section id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Link to this heading">#</a></h2>
+<p>Soient P, Q ∈ K[X] tels que PQ = 0. Montrer que P = 0 ou Q = 0.</p>
+</section>
+</section>
+<section id="solution">
+<h1>Solution :<a class="headerlink" href="#solution" title="Link to this heading">#</a></h1>
+<p>L’égalité PQ = 0 implique deg(PQ) = −∞ et donc deg(P) + deg(Q) = −∞. Alors deg(P) = −∞ ou deg(Q) = −∞. Ceci montre que P = 0 ou Q = 0.</p>
+</section>
+<section id="id4">
+<h1>Plan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_7_Picture_11.jpeg" /></p>
+<p>La division euclidienne dans l’ensemble des entiers relatifs Z s’étend naturellement à l’anneau K[X].</p>
+</section>
+<section id="id5">
+<h1>Définition<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>Soit A, B ∈ K[X]. On dit que A divise B s’il existe un polynôme Q ∈ K[X] tel que B = QA. On note A|B.</p>
+</section>
+<section id="exemples">
+<h1>Exemples<a class="headerlink" href="#exemples" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><sup>1</sup> Dans R[X] on a X <sup>3</sup> − 1 = (X − 1)(X <sup>2</sup> + X + 1). Donc X <sup>2</sup> + X + 1 divise X <sup>3</sup> − 1.</p></li>
+<li><p><sup>2</sup> Dans C[X] on a X <sup>4</sup> − 1 = (X <sup>2</sup> − 1)(X <sup>2</sup> + 1) = (X <sup>2</sup> − 1)(X − i)(X + i). Donc X + i divise X <sup>4</sup> − 1.</p></li>
+</ul>
+</section>
+<section id="theoreme">
+<h1>Théorème<a class="headerlink" href="#theoreme" title="Link to this heading">#</a></h1>
+<p>Soit A, B ∈ K[X] deux polynômes, avec B 6= 0. Alors il existe un unique couple de polynômes (Q, R) vérifiant</p>
+<div class="math notranslate nohighlight">
+\[A = BQ + R\]</div>
+<p>et  <span class="math notranslate nohighlight">\(deg(R) &lt; deg(B)\)</span> .</p>
+<p>Le polynôme Q (respectivement R) s’appelle le quotient (respectivement le reste) de la division euclidienne de A par B.</p>
+<section id="id6">
+<h2>Remarque<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>Dans le dernier théorème la relation A = BQ + R montre que B divise A si, et seulement si R = 0.</p>
+</section>
+<section id="exemple-1">
+<h2>Exemple 1<a class="headerlink" href="#exemple-1" title="Link to this heading">#</a></h2>
+<p>Effectuons la division euclidienne du polynôme A = X <sup>3</sup> + X <sup>2</sup> − 1 par le polynôme B = X − 1.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{c|ccccc}
+X^3 &amp; +X^2 &amp; -1 &amp; X &amp; -1 \\
+-X^3 &amp; +X^2 &amp; &amp; &amp; \\
+\hline
+2X^2 &amp; &amp; -1 &amp; &amp; \\
+&amp; &amp; &amp; &amp; \\
+\hline
+-2X^2 &amp; +2X &amp; -1 &amp; &amp; \\
+\hline
+2X &amp; -1 &amp; &amp; &amp; \\
+\hline
+-2X &amp; +2 &amp; &amp; &amp; \\
+\hline
++1 &amp; &amp; &amp; &amp; \\
+\end{array}\end{split}\]</div>
+<p>On obtient alors Q = X <sup>2</sup> + 2X + 2 et R = 1.</p>
+<div class="math notranslate nohighlight">
+\[X^3 + X^2 - 1 = (X - 1)(X^2 + 2X + 2) + 1.\]</div>
+<p><img alt="" src="_page_10_Picture_6.jpeg" /></p>
+</section>
+</section>
+<section id="id7">
+<h1>Exemples<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p>Effectuons la division euclidienne du polynôme A = X <sup>5</sup> − 1 par le polynôme B = X <sup>2</sup> − 1.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{c|ccccc}
+X^5 &amp; -1 &amp; X^2 &amp; -1 \\
+-X^5 &amp; +X^3 &amp; -1 &amp; X^3 &amp; +X \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp; &amp; \\
+\hline
+&amp; &amp; &amp; &amp;\end{split}\]</div>
+<p>On obtient alors Q = X <sup>3</sup> + X et R = X − 1.</p>
+<div class="math notranslate nohighlight">
+\[X^5 - 1 = (X^2 - 1)(X^3 + X) + X - 1.\]</div>
+</section>
+<section id="id8">
+<h1>Plan<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>3 Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_12_Picture_11.jpeg" /></p>
+<section id="id9">
+<h2>Définition<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>Soit A, B ∈ K[X], avec A 6= 0 ou B 6= 0. On appelle le plus grand diviseur commun de A et B, que l’on note pgcd(A, B), l’unique polynôme unitaire de plus grand degré qui divise à la fois A et B.</p>
+<p>L’algorithme d’Euclide pour les entiers s’étend aux polynômes et permet de déterminer le  <span class="math notranslate nohighlight">\(\operatorname{pgcd}\)</span>  de deux polynômes.</p>
+</section>
+<section id="algortihme-d-euclide">
+<h2>Algortihme d’Euclide.<a class="headerlink" href="#algortihme-d-euclide" title="Link to this heading">#</a></h2>
+<p>Soit A, B des polynômes, avec  <span class="math notranslate nohighlight">\(B \neq 0\)</span> . On effectue les divisions euclidiennes successives,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}egin{array}{lcl} A &amp; = &amp; BQ_1 + R_1 &amp; \deg(R_1) &lt; \deg(B) \\ B &amp; = &amp; R_1Q_2 + R_2 &amp; \deg(R_2) &lt; \deg(R_1) \\ R_1 &amp; = &amp; R_2Q_3 + R_3 &amp; \deg(R_3) &lt; \deg(R_2) \\ &amp; dots &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;\end{split}\]</div>
+<p>Le pgcd est le dernier reste non nul  <span class="math notranslate nohighlight">\(R_k\)</span>  (rendu unitaire).</p>
+<p><img alt="" src="_page_14_Picture_6.jpeg" /></p>
+</section>
+<section id="id10">
+<h2>Exemple 1<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>Calculer pgcd(X <sup>5</sup> − 1, X <sup>3</sup> − 1). Appliquons l’algorithme d’Euclide :</p>
+<div class="math notranslate nohighlight">
+\[X^5 - 1 = (X^3 - 1) \times X^2 + X^2 - 1\]</div>
+<p><span class="math notranslate nohighlight">\(X^3 - 1 = (X^2 - 1) \times X + X - 1\)</span><br />
+<span class="math notranslate nohighlight">\(X^2 - 1 = (X - 1) \times (X + 1) + 0\)</span></p>
+<p>Le pgcd est le dernier reste non nul, donc pgcd(X <sup>5</sup> − 1, X <sup>3</sup> − 1) = X − 1.</p>
+</section>
+<section id="exemple-2">
+<h2>Exemple 2<a class="headerlink" href="#exemple-2" title="Link to this heading">#</a></h2>
+<p>• Calculer  <span class="math notranslate nohighlight">\(\operatorname{pgcd}(X^5 + X^4 + 2X^3 + X^2 + X + 2, X^4 + 2X^3 + X^2 - 4)\)</span> . Appliquons l’algorithme d’Euclide :</p>
+<p>Apprint and the definition of Euclide .
+$<span class="math notranslate nohighlight">\(X^5 + X^4 + 2X^3 + X^2 + X + 2 = (X^4 + 2X^3 + X^2 - 4)(X - 1) + 3X^3 + 2X^2 + 5X - 2\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[X^4 + 2X^3 + X^2 - 4 = (3X^3 + 2X^2 + 5X - 2) \times \frac{1}{9}(3X + 4) - \frac{14}{9}(X^2 + X + 2)\]</div>
+<div class="math notranslate nohighlight">
+\[3X^3 + 2X^2 + 5X - 2 = (X^2 + X + 2)(3X - 1) + 0\]</div>
+<p>Ainsi
+$<span class="math notranslate nohighlight">\(\operatorname{pgcd}(X^5 + X^4 + 2X^3 + X^2 + X + 2, X^4 + 2X^3 + X^2 - 4) = X^2 + X + 2.\)</span>$</p>
+</section>
+<section id="exemple-3">
+<h2>Exemple 3<a class="headerlink" href="#exemple-3" title="Link to this heading">#</a></h2>
+<p>Calculer pgcd(2X − 2X − X + 1, 2X + 2X + 3X + 2X + 1). Appliquons l’algorithme d’Euclide : X − 2X − X + 1 = (2X + 2X + 3X + 2X + 1) × 1 + (−4X − 4X − 2X) X + 2X + 3X + 2X + 1 = (−4X − 4X − 2X) × (− X) + 2X + 2X + 1 −4X − 4X − 2X = (2X + 2X + 1)(−2X) + 0 Ainsi Le dernier reste non nul est 2X + 2X + 1 et donc pgcd(2X −2X −X +1, 2X +2X +3X +2X +1) = X +X + .</p>
+</section>
+</section>
+<section id="polynomes-premiers-entre-eux">
+<h1>Polynômes premiers entre eux<a class="headerlink" href="#polynomes-premiers-entre-eux" title="Link to this heading">#</a></h1>
+<section id="id11">
+<h2>Définition<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>On dit que deux polynômes A et B sont premiers entre eux lorsque pgcd(A, B) = 1.</p>
+</section>
+</section>
+<section id="id12">
+<h1>Exemple 1<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p>Montrons que les polynômes X <sup>3</sup> − 1 et X <sup>2</sup> + 1 sont premiers entre eux.</p>
+<p>Appliquons l’algorithme d’Euclide pour calculer pgcd(X <sup>3</sup> − 1, X <sup>2</sup> + 1).</p>
+<div class="math notranslate nohighlight">
+\[X^{3} - 1 = (X^{2} + 1)(X) - X - 1\]</div>
+<div class="math notranslate nohighlight">
+\[X^{2} + 1 = (-X - 1)(-X + 1) + 2\]</div>
+<div class="math notranslate nohighlight">
+\[-X - 1 = (-\frac{1}{2}X - \frac{1}{2}) \times 2 + 0\]</div>
+<p>Ainsi pgcd(X <sup>3</sup> − 1, X <sup>2</sup> + 1) = 1.</p>
+<p><img alt="" src="_page_18_Picture_8.jpeg" /></p>
+</section>
+<section id="id13">
+<h1>Polynômes premiers entre eux<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<section id="id14">
+<h2>Exemple 2<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>Montrons que les polynômes X <sup>3</sup> + 1 et X <sup>2</sup> + X + 1 sont premiers entre eux.</p>
+<p>Appliquons l’algorithme d’Euclide pour calculer pgcd(X <sup>3</sup> + 1, X <sup>2</sup> + X + 1).</p>
+<div class="math notranslate nohighlight">
+\[X^3 + 1 = (X^2 + X + 1)(X - 1) + 2\]</div>
+<p><span class="math notranslate nohighlight">\(X^2 + X + 1 = (\frac{1}{2}X^2 + \frac{1}{2}X + \frac{1}{2}) \times 2 + 0\)</span></p>
+<p>Ainsi pgcd(X <sup>3</sup> + 1, X <sup>2</sup> + X + 1) = 1.</p>
+<p><img alt="" src="_page_19_Picture_6.jpeg" /></p>
+</section>
+<section id="id15">
+<h2>Plan<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_20_Picture_11.jpeg" /></p>
+</section>
+<section id="racines-d-un-polynome">
+<h2>Racines d’un polynôme<a class="headerlink" href="#racines-d-un-polynome" title="Link to this heading">#</a></h2>
+<section id="notation">
+<h3>Notation<a class="headerlink" href="#notation" title="Link to this heading">#</a></h3>
+<p>Soit  <span class="math notranslate nohighlight">\(P=a_0+a_1X+\cdots+a_nX^n\in\mathbb{K}[X].\)</span>  On note  <span class="math notranslate nohighlight">\(\tilde{P}\)</span>  la fonction polynomiale associée à P:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{P}: \mathbb{K} \to \mathbb{K}\]</div>
+<p><span class="math notranslate nohighlight">\(x \mapsto a_0 + a_1 x + \dots + a_n x^n.\)</span></p>
+<p>Pour un scalaire  <span class="math notranslate nohighlight">\(x \in \mathbb{K}\)</span>  on note P(x) l’évaluation de  <span class="math notranslate nohighlight">\(\tilde{P}\)</span>  en x :  <span class="math notranslate nohighlight">\(P(x) = \tilde{P}(x)\)</span> .</p>
+</section>
+<section id="id16">
+<h3><strong>Définition</strong><a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p>Soit  <span class="math notranslate nohighlight">\(P \in \mathbb{K}[X]\)</span>  et  <span class="math notranslate nohighlight">\(\alpha \in \mathbb{K}\)</span> . On dit que  <span class="math notranslate nohighlight">\(\alpha\)</span>  est une racine de P si  <span class="math notranslate nohighlight">\(P(\alpha) = 0\)</span> .</p>
+</section>
+<section id="id17">
+<h3><strong>Exemples</strong><a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>1 est une racine de  <span class="math notranslate nohighlight">\(X^4 1\)</span> .</p></li>
+<li><p>② Pour tout entier naturel n et tout entier  <span class="math notranslate nohighlight">\(0 \le k \le n-1\)</span> , le complexe  <span class="math notranslate nohighlight">\(e^{\frac{2ik\pi}{n}}\)</span>  est une racine du polynôme  <span class="math notranslate nohighlight">\(X^n-1\)</span> .</p></li>
+<li><p><strong>3</strong> 0 est une racine du polynôme de la forme  <span class="math notranslate nohighlight">\(P = a_1 X + \cdots + a_n X^n\)</span> .</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id18">
+<h1>Racines d’un polynôme<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+<section id="id19">
+<h2>Proposition<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<p>Soit P ∈ K[X] et α ∈ K. Alors α est une racine de P si, et seulement si X − α divise P.</p>
+<section id="preuve">
+<h3>Preuve :<a class="headerlink" href="#preuve" title="Link to this heading">#</a></h3>
+<p>Montrons l’implication directe. On sait qu’il existe un couple unique de polynômes (Q, R) vérifiant P = (X − α)Q + R et deg(R) &lt; deg(X − α). Puisque deg(X − α) = 1 il vient deg(R) = 0 ou deg(R) = −∞ ; autrement dit, R est une constante non nulle ou R = 0. Mais P(α) = R(α) = 0 ce qui montre que R = 0. La réciproque est évidente.</p>
+</section>
+</section>
+</section>
+<section id="id20">
+<h1>Racines d’un polynôme<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<section id="id21">
+<h2>Définition<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>Soit P ∈ K[X], α ∈ K et m ∈ N ? . On dit que α est une racine de P, de multiplicité m, si (X − α) <sup>m</sup> divise P et (X − α) <sup>m</sup>+<sup>1</sup> ne divise pas P. Si m = 1 (respectivement m = 2) on parle de racine simple (respectivement double) et lorsque m &gt; 2 on dit que α est une racine multiple de P.</p>
+</section>
+<section id="id22">
+<h2>Proposition<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<p>Soit P ∈ K[X] et α ∈ K. Alors α est une racine de P de multiplicité m si, et seulement si, il existe un polynôme Q ∈ K[X] tel que P = (X − α) <sup>m</sup>Q et Q(α) 6= 0.</p>
+</section>
+<section id="id23">
+<h2>Plan<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>6 Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_24_Picture_11.jpeg" /></p>
+<section id="id24">
+<h3>Définition<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>Soit P = a<sup>0</sup> + a1X + · · · + anX <sup>n</sup> ∈ K[X]. Le polynôme dérivé de P est le polynôme, que l’on note P 0 , défini par</p>
+<div class="math notranslate nohighlight">
+\[P' = a_1 + 2a_2X + \dots + na_nX^{n-1} = \sum_{k=1}^n ka_kX^{k-1}.\]</div>
+</section>
+<section id="id25">
+<h3>Exemples<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> Soit P = X <sup>4</sup> + X <sup>3</sup> + 2X + 3. Alors P <sup>0</sup> = 4X <sup>3</sup> + 3X <sup>2</sup> + 2.</p></li>
+<li><p><sup>2</sup> Soit P = X <sup>n</sup> − 1. Alors P <sup>0</sup> = nX<sup>n</sup>−<sup>1</sup> .</p></li>
+</ul>
+</section>
+<section id="id26">
+<h3>Remarques<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<p>Soit P ∈ K[X].</p>
+<ul class="simple">
+<li><p><sup>1</sup> Si deg(P) &gt; 0 on a deg(P 0 ) = deg(P) − 1.</p></li>
+<li><p><sup>2</sup> P est constante si, et seulement si, P <sup>0</sup> = 0.</p></li>
+</ul>
+<p><img alt="" src="_page_25_Picture_11.jpeg" /></p>
+</section>
+<section id="id27">
+<h3>Proposition<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>Soient P, Q ∈ K[X] et α, β ∈ K. Alors</p>
+<ul class="simple">
+<li><p><sup>1</sup> (αP + βQ) <sup>0</sup> = αP <sup>0</sup> + βQ<sup>0</sup> .</p></li>
+<li><p><sup>2</sup> (PQ) <sup>0</sup> = P <sup>0</sup>Q + PQ<sup>0</sup> .</p></li>
+</ul>
+</section>
+</section>
+<section id="id28">
+<h2>Définition<a class="headerlink" href="#id28" title="Link to this heading">#</a></h2>
+<p>Soit P ∈ K[X] et n ∈ N. La dérivée n-ième (ou d’ordre n) de P, que l’on note P (n) , est le polynôme défini par récurrence :</p>
+<ul class="simple">
+<li><p>P (0) = P,</p></li>
+<li><p>P (k+1) = (P (k) ) <sup>0</sup> ∀k ∈ N.</p></li>
+</ul>
+</section>
+<section id="proposition-formule-de-taylor">
+<h2>Proposition (Formule de Taylor )<a class="headerlink" href="#proposition-formule-de-taylor" title="Link to this heading">#</a></h2>
+<p>Soit P ∈ K[X], a ∈ K. On suppose que deg(P) ≤ n. Alors</p>
+<div class="math notranslate nohighlight">
+\[P = \sum_{k=0}^{n} \frac{P^{(k)}(a)}{k!} (X - a)^{k}.\]</div>
+<p><img alt="" src="_page_26_Picture_12.jpeg" /></p>
+<section id="id29">
+<h3>Exercice<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<p>Pour un entier naturel  <span class="math notranslate nohighlight">\(n \ge 3\)</span>  déterminer le reste R de la division euclidienne de  <span class="math notranslate nohighlight">\(X^n\)</span>  par  <span class="math notranslate nohighlight">\((X - a)^3\)</span> .</p>
+<p>La formule de Taylor utilisée lorsque  <span class="math notranslate nohighlight">\(P = X^n\)</span>  montre que</p>
+<div class="math notranslate nohighlight">
+\[X^{n} = P(a) + P'(a)(X - a) + \frac{P''(a)}{2}(X - a)^{2} + \sum_{k=3}^{n} \frac{P^{(k)}(a)}{k!}(X - a)^{k}.\]</div>
+<p>Donc</p>
+<div class="math notranslate nohighlight">
+\[X^{n} = a^{n} + na^{n-1}(X - a) + \frac{n(n-1)a^{n-2}}{2}(X - a)^{2} +\]</div>
+<div class="math notranslate nohighlight">
+\[(X - a)^{3} \left( \sum_{k=3}^{n} \frac{P^{(k)}(a)}{k!} (X - a)^{k-3} \right).\]</div>
+<p>Alors l’unicité du quotient et du reste de la division euclidienne permet de conclure que</p>
+<p><span class="math notranslate nohighlight">\(C = a^n + na^{n-1}(X - a) + \frac{n(n-1)a^{n-2}}{\text{Cours d'Algèbre 1, S}_1}(X - a)\)</span></p>
+<p>La formule de Taylor permet d’avoir un critère simple pour déterminer la multiplicité d’une racine d’un polynôme.</p>
+</section>
+<section id="id30">
+<h3>Proposition<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<p>Soit P ∈ K[X], a ∈ K et m ∈ N ? . Alors α est une racine de P de multiplicité m si, et seulement si P(a) = P 0 (a) = · · · = P (m−1) (a) = 0 et P (m) (a) 6= 0.</p>
+</section>
+<section id="id31">
+<h3>Exemples<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><sup>1</sup> 0 est une racine de multiplicité 3 du polynôme P = X <sup>3</sup> + 2X <sup>5</sup> − X 7 . En effet on a P(0) = P 0 (0) = P <sup>00</sup>(0) = 0 et P (3) (0) 6= 0.</p></li>
+<li><p><sup>2</sup> Une racine n-ième de l’unité α, qui est racine du polynôme P = X <sup>n</sup> − 1, est simple puisque P(α) = α <sup>n</sup> − 1 = 0 et P 0 (α) = nα <sup>n</sup>−<sup>1</sup> 6= 0.</p></li>
+</ul>
+</section>
+</section>
+<section id="id32">
+<h2>Plan<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>6 Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_29_Picture_11.jpeg" /></p>
+</section>
+<section id="polynome-conjugue">
+<h2>Polynôme conjugué<a class="headerlink" href="#polynome-conjugue" title="Link to this heading">#</a></h2>
+<p>Soit P = a<sup>0</sup> + a1X + · · · + anX <sup>n</sup> ∈ C[X]. Le conjugué de P est le polynôme P ∈ C[X] défini par</p>
+<div class="math notranslate nohighlight">
+\[\overline{P} = \overline{a_0} + \overline{a_1}X + \cdots + \overline{a_n}X^n.\]</div>
+<p>On a le résultat important :</p>
+<section id="id33">
+<h3>Proposition<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<p>Soit P ∈ C[X] et α ∈ C une racine de P. Alors : α est une racine de P de multiplicité m si, et seulement si, α est une racine de P de multiplicité m.</p>
+<p>En remarquant q’un polynôme P de R[X] coincide avec son conjugué (P = P), on obtient :</p>
+</section>
+<section id="corollaire">
+<h3>Corollaire<a class="headerlink" href="#corollaire" title="Link to this heading">#</a></h3>
+<p>Soit P ∈ R[X] et α ∈ C une racine de P. Alors : α est une racine de P de multiplicité m si, et seulement si, α est une racine de P de multiplicité m.</p>
+<p><img alt="" src="_page_30_Picture_9.jpeg" /></p>
+</section>
+</section>
+<section id="id34">
+<h2>Plan<a class="headerlink" href="#id34" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_31_Picture_11.jpeg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="factorisation-dans-c-x">
+<h1>Factorisation dans C[X]<a class="headerlink" href="#factorisation-dans-c-x" title="Link to this heading">#</a></h1>
+<p>Le théorème suivant est connu sous le nom de théorème de d’Alembert-Gauss ou théorème fondamental d’algèbre :</p>
+<section id="id35">
+<h2>Theorème<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
+<p>Tout polynôme à coefficients complexes de degré n ≥ 1 admet au moins une racine dans C.</p>
+<p>En utilisant le théorème de d’Alembert-Gauss on obtient le théorème de factorisation de polynômes de C[X] :</p>
+<section id="id36">
+<h3>Theorème<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<p>Soit P un polynôme de C[X] de degré n ≥ 1. Alors P s’écrit sous la forme suivante :</p>
+<div class="math notranslate nohighlight">
+\[P = \lambda (X - \alpha_1)^{m_1} (X - \alpha_2)^{m_2} \cdots (X - \alpha_r)^{m_r},\]</div>
+<p>où λ est le coefficient dominant de P et α1, α2, … , α<sup>r</sup> sont les racines distinctes de P de multiplicités respectives m1, m2, … , m<sup>r</sup> . Cette écriture de P s’appelle la décomposition de P en produit de facteurs irréductibles dans C[X].</p>
+</section>
+</section>
+<section id="factorisation-dans-mathbb-c-x">
+<h2>Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span><a class="headerlink" href="#factorisation-dans-mathbb-c-x" title="Link to this heading">#</a></h2>
+<section id="id37">
+<h3>Remarques<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
+<p>Décomposer un polynôme en produit de facteurs irréductible revient à déterminer ses racines complexes avec leurs multiplicités.</p>
+</section>
+<section id="id38">
+<h3><strong>Exemples</strong><a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2 X^2 + 1 = (X i)(X + i).\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2X^2 + X + 1 = (X j)(X \bar{j}) \text{ où } j = e^{\frac{2i\pi}{3}} = \frac{-1}{2} + \frac{i\sqrt{3}}{2}.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X^3 + 1 = (X+1)(X e^{\frac{i\pi}{3}})(X e^{\frac{-i\pi}{3}}) = (X+1)(X \frac{1}{2} \frac{\sqrt{3}}{2}i)(X \frac{1}{2} + \frac{\sqrt{3}}{2}i).\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="factorisation-dans-mathbb-r-x">
+<h2>Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span><a class="headerlink" href="#factorisation-dans-mathbb-r-x" title="Link to this heading">#</a></h2>
+<p>Le théorème de d’Alembert-Gauss n’est pas vrai sur  <span class="math notranslate nohighlight">\(\mathbb R\)</span>  dans le sens où il existe des polynômes à coefficients dans  <span class="math notranslate nohighlight">\(\mathbb R\)</span>  qui n’ont pas de racines dans  <span class="math notranslate nohighlight">\(\mathbb R\)</span> . Un exemple simple est donné par le polynôme  <span class="math notranslate nohighlight">\(X^2+1\)</span> . Ceci implique que dans  <span class="math notranslate nohighlight">\(\mathbb R[X]\)</span>  on aura une autre forme de factorisation de polynômes :</p>
+<section id="id39">
+<h3>Définition<a class="headerlink" href="#id39" title="Link to this heading">#</a></h3>
+<p>On appelle discriminant d’un polynôme  <span class="math notranslate nohighlight">\(aX^2 + bX + c \in \mathbb{R}[X]\)</span> , le réel  <span class="math notranslate nohighlight">\(b^2 - 4ac\)</span> . Le polynôme  <span class="math notranslate nohighlight">\(aX^2 + bX + c \in \mathbb{R}[X]\)</span>  est de discriminant strictement négatif si  <span class="math notranslate nohighlight">\(b^2 - 4ac &lt; 0\)</span> .</p>
+</section>
+<section id="id40">
+<h3>Theorème<a class="headerlink" href="#id40" title="Link to this heading">#</a></h3>
+<p>Soit P un polynôme de  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span>  de degré  <span class="math notranslate nohighlight">\(n \ge 1\)</span> . Alors P s’écrit sous la forme suivante :</p>
+<div class="math notranslate nohighlight">
+\[P = \lambda (X - \alpha_1)^{m_1} (X - \alpha_2)^{m_2} \cdots (X - \alpha_r)^{m_r} Q_1^{\ell_1} \cdots Q_s^{\ell_s},\]</div>
+<p>où les  <span class="math notranslate nohighlight">\(\alpha_i\)</span>  sont les racines réelles distinctes de P, de multiplicités respectives  <span class="math notranslate nohighlight">\(m_i\)</span> , et les  <span class="math notranslate nohighlight">\(Q_i \in \mathbb{R}[X]\)</span>  sont des polynômes de degré 2 de discriminant strictement négatif.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="factorisation-dans-r-x">
+<h1>Factorisation dans R[X]<a class="headerlink" href="#factorisation-dans-r-x" title="Link to this heading">#</a></h1>
+<section id="id41">
+<h2>Exemples<a class="headerlink" href="#id41" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>X − 1 = (X − 1)(X + X + 1).</p></li>
+<li><p>X + 1 = X + 2X + 1 − 2X = (X + 1) − 2X = (X − √ X + 1)(X + √ X + 1).</p></li>
+<li><p>X + 1 = (X + 1)(X − X + 1).</p></li>
+</ul>
+</section>
+<section id="id42">
+<h2>Remarque<a class="headerlink" href="#id42" title="Link to this heading">#</a></h2>
+<p>Soit α ∈ C\R c’est à dire Im(α) 6= 0. Alors le polynôme (X − α)(X − α) = X − 2Re(α)X + |α| est un polynôme de R[X] de degré 2 de discriminant 4Re(α) − 4|α| = −4Im(α) qui est strictement négatif.</p>
+</section>
+<section id="id43">
+<h2>Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span><a class="headerlink" href="#id43" title="Link to this heading">#</a></h2>
+<p>Rappelons que si  <span class="math notranslate nohighlight">\(\alpha \in \mathbb{C} \backslash \mathbb{R}\)</span>  est une racine complexe d’un polynôme  <span class="math notranslate nohighlight">\(P \in \mathbb{R}[X]\)</span> , de multiplicité m, alors  <span class="math notranslate nohighlight">\(\overline{\alpha}\)</span>  est une racine de P de même multiplicité m. Ceci nous permet de passer de la factorisation du polynôme P dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span>  à sa factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span> .</p>
+<section id="id44">
+<h3>Exemples<a class="headerlink" href="#id44" title="Link to this heading">#</a></h3>
+<p>• Factorisons le polynôme  <span class="math notranslate nohighlight">\(X^5-1\)</span>  dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span> . On sait que dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span>  on a :</p>
+<div class="math notranslate nohighlight">
+\[X^{5}-1=(X-1)(X-e^{\frac{2i\pi}{5}})(X-e^{\frac{4i\pi}{5}})(X-e^{\frac{6i\pi}{5}})(X-e^{\frac{8i\pi}{5}}).\]</div>
+<p>Puisque  <span class="math notranslate nohighlight">\(e^{\frac{6i\pi}{5}}=\overline{e^{\frac{4i\pi}{5}}}\)</span>  et  <span class="math notranslate nohighlight">\(e^{\frac{8i\pi}{5}}=\overline{e^{\frac{2i\pi}{5}}}\)</span>  il vient dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span>  :</p>
+<div class="math notranslate nohighlight">
+\[X^{5}-1=(X-1)(X^{2}-2\operatorname{Re}(e^{\frac{2i\pi}{5}})X+1)(X^{2}-2\operatorname{Re}(e^{\frac{4i\pi}{5}})X+1).\]</div>
+<p>Factorisons le polynôme  <span class="math notranslate nohighlight">\(X^4+1\)</span>  dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span> . On a  <span class="math notranslate nohighlight">\(X^4+1=(X^2+i)(X^2-i)\)</span> . Or les racines carrées de i sont  <span class="math notranslate nohighlight">\(\frac{1+i}{\sqrt{2}}\)</span>  et  <span class="math notranslate nohighlight">\(-\frac{1+i}{\sqrt{2}}\)</span>  et les racines carrées de -i sont  <span class="math notranslate nohighlight">\(\frac{1-i}{\sqrt{2}}\)</span>  et  <span class="math notranslate nohighlight">\(-\frac{1-i}{\sqrt{2}}\)</span> . Donc</p>
+</section>
+<section id="id45">
+<h3>Plan<a class="headerlink" href="#id45" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Polynômes à une indéterminée</p></li>
+<li><p>Division euclidienne</p></li>
+<li><p>Plus grand commun diviseur (pgcd)</p></li>
+<li><p>Racines d’un polynôme</p></li>
+<li><p>Polynômes dérivés</p></li>
+<li><p>Polynôme conjugué</p></li>
+<li><p>Factorisation de polynômes</p>
+<ul>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></p></li>
+<li><p>Factorisation dans  <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></p></li>
+</ul>
+</li>
+<li><p>8 Exercices</p></li>
+</ul>
+<p><img alt="" src="_page_37_Picture_11.jpeg" /></p>
+</section>
+<section id="exercices">
+<h3>Exercices<a class="headerlink" href="#exercices" title="Link to this heading">#</a></h3>
+<section id="id46">
+<h4>Exercice<a class="headerlink" href="#id46" title="Link to this heading">#</a></h4>
+<p>Soit P = X − 15X − 10X + 60X + 72.</p>
+<ul class="simple">
+<li><p>Montrer que −2 est une racine de P et déterminer sa multiplicité.</p></li>
+<li><p>En déduire la factorisation de P dans R[X].</p></li>
+</ul>
+</section>
+<section id="id47">
+<h4>Exercice<a class="headerlink" href="#id47" title="Link to this heading">#</a></h4>
+<p>Soit P = 2X − 11X + 21X − 22X + 28X − 24.</p>
+<ul class="simple">
+<li><p>Montrer que 2 est une racine de P et déterminer sa multiplicité.</p></li>
+<li><p>En déduire la factorisation de P dans R[X] puis dans C[X].</p></li>
+</ul>
+</section>
+<section id="id48">
+<h4>Exercice<a class="headerlink" href="#id48" title="Link to this heading">#</a></h4>
+<p>Soit
+$<span class="math notranslate nohighlight">\(P = X^6 - 6X^5 + 11X^4 - 12X^3 + 19X^2 - 6X + 9\)</span>$
+.</p>
+<ul class="simple">
+<li><p>Montrer que 3 est une racine de P et déterminer sa multiplicité.</p></li>
+<li><p>En déduire la factorisation de P dans R[X] puis dans C[X].</p></li>
+</ul>
+</section>
+<section id="id49">
+<h4>Exercice<a class="headerlink" href="#id49" title="Link to this heading">#</a></h4>
+<p>Soit
+$<span class="math notranslate nohighlight">\(P = X^6 - 2X^5 + 3X^4 - 4X^3 + 3X^2 - 2X + 1\)</span>$
+.</p>
+<ul class="simple">
+<li><p>Montrer que 1 est une racine de P et déterminer sa multiplicité.</p></li>
+<li><p>En déduire la factorisation de P dans R[X] puis dans C[X].</p></li>
+</ul>
+<p>Fin du chapitre 2</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="nComplexes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span id="page-0-0"></span>Module d’algèbre 1</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapitre 2 : Polynômes à une indéterminée</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plan">Plan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomes-a-une-indeterminee">Polynômes à une indéterminée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notations">Notations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Polynômes à une indéterminée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarques">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarque">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Remarques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Plan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Définition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme">Théorème</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-1">Exemple 1</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exemples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Plan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algortihme-d-euclide">Algortihme d’Euclide.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Exemple 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-2">Exemple 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-3">Exemple 3</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomes-premiers-entre-eux">Polynômes premiers entre eux</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Définition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Exemple 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Polynômes premiers entre eux</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Exemple 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racines-d-un-polynome">Racines d’un polynôme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><strong>Définition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Racines d’un polynôme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Proposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preuve">Preuve :</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Racines d’un polynôme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Proposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Proposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Définition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proposition-formule-de-taylor">Proposition (Formule de Taylor )</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Exercice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Exemples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynome-conjugue">Polynôme conjugué</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Proposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaire">Corollaire</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Plan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-c-x">Factorisation dans C[X]</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Theorème</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Theorème</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-mathbb-c-x">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{C}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Remarques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38"><strong>Exemples</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-mathbb-r-x">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">Définition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">Theorème</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#factorisation-dans-r-x">Factorisation dans R[X]</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Exemples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Remarque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Factorisation dans <span class="math notranslate nohighlight">\(\mathbb{R}[X]\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Exemples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">Exercice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By AI and Abdo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
